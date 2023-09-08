@@ -2,21 +2,20 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update, :destroy]
 
     def index
-        articles = Article.all
-        render articles 
+        @articles = Article.all 
     end
     def show
 
     end
     def new
-
+        @article = Article.new
     end
     def create
         @article = Article.new(article_params)
         if @article.save
             redirect_to @article, notice: "article was successfully created"
          else
-            render_errors(@article)
+            flash[:alert] = "there was an error creating the article"
             render :new
          end
     end

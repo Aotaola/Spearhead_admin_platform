@@ -1,12 +1,12 @@
 class AdminsController < ApplicationController
 
-    before_action :set_admin, only: [:show, :new, :edit, :update, :destroy ]
+    before_action :set_admin, only: [:show, :edit, :update, :destroy ]
 
     def show
 
     end
     def new
-
+        @admin = Admin.new
     end
     def create
 

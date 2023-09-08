@@ -1,0 +1,12 @@
+<%= form_with(scope: :session, url: login_path, local: true) do |f|%>
+    <div>
+        <%= f.label :email%>
+        <%= f.email_field :email, placeholder: "account email" %>
+    </div>
+    <div>
+        <%= f.label :password%>
+        <%= f.password_field :password, placeholder: "account password"%>
+    </div>
+        <%= f.submit "Login" %>
+<%end%>
+<%=link_to "New here? sign up!", new_admin_path%>

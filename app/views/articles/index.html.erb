@@ -1,1 +1,5 @@
-<h1>hello world<h1>
+<h1>full list of articles<h1>
+
+<%= @articles.each do |article|%>
+    <%=link_to article.title, artile_path(article)%>
+<%end%>

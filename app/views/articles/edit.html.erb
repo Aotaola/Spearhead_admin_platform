@@ -1,0 +1,7 @@
+<h1> here are all the article </h1>
+
+<% if @article.present? %>
+    <%= @article.each do |article|%>
+        <%=  link_to  @article.title, article_path(article) %>
+    <% end %>
+<% end%>
