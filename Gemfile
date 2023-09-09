@@ -28,6 +28,12 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# use the CarrierWave to help image upload
+gem 'carrierwave', '~> 2.0'
+
+# use mini magick to help with image sizing
+gem 'mini_magick'
+
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 

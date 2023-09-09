@@ -1,3 +1,9 @@
 <%= @article.title %>
+<br/>
+<%= @article.description %>
+<br/>
+
 <%= @article.body %>
-<%= @article.photo%>
+<br/>
+
+<%= image_tag(@article.photo.url) if @article.photo? %>

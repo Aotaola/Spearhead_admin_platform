@@ -16,9 +16,8 @@
         <%= f.label :confirm_password %>
         <%= f.password_field :confirm_password %>
     </div>
-    <%# <div> %>
-        <%# <%= f.label :photo%> 
-        <%# <%= f.image_upload :photo %> 
-    <%# </div> %>
+    <div>
+        <%= f.file_field :photo, placeholder: 'upload a photo' %>
+    </div>
     <%= f.submit "Signup!"%>
 <%end%>

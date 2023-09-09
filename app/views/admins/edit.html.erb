@@ -1,1 +1,24 @@
 <h1>here we edit the admin</h1>
+
+<%= form_with model: @admin do |f|%>
+    <div>
+        <%= f.label :name%>
+        <%= f.text_field :name, placeholder: @admin.name%>
+    </div>
+    <div>
+        <%= f.label :email%>
+        <%= f.text_field :email, placeholder: @admin.email%>
+    </div>
+    <div>
+        <%= f.label :password%>
+        <%= f.password_field :password, placeholder: "change a password"%>
+    </div>
+    <div>
+        <%= f.label :confirm_password %>
+        <%= f.password_field :confirm_password, placeholder: 'make sure passwords match' %>
+    </div>
+    <div>
+        <%= f.file_field :photo, placeholder: 'upload a photo' %>
+    </div>
+    <%= f.submit "Update!"%>
+<%end%>

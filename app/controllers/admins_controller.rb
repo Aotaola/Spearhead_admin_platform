@@ -23,8 +23,8 @@ class AdminsController < ApplicationController
 
     end
     def update
-        @admin = Admin.update(admin_params)
-        if @admin.save
+
+        if @admin.update(admin_params)
             redirect_to @admin, notice: "your admin profile was successfully updated"
         else
             render_errors (@admin)
