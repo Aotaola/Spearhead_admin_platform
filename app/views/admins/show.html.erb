@@ -1,3 +1,5 @@
 <%= @admin.name%>
 <%= @admin.photo%>
 <%= link_to "write a new article", new_article_path %>
+<%= button_to 'Edit Profile', edit_admin_path, method: :get %>
+<%= button_to 'Close Session', logout_path, method: :delete %>

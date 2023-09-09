@@ -10,12 +10,15 @@ class SessionsController < ApplicationController
             flash[:notice] = "Login successful"
             redirect_to admin
         else 
+            flash.now[:notice] = "there was an error creating the session"
             render :new
-            flash[:notice] = "there was an error creating the session"
         end
+
     end
     def destroy
-
+        reset_session
+        flash[:notice] = "you have been logged out"
+        redirect_to root_path
     end
 
 end

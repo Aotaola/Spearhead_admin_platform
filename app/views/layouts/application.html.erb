@@ -11,10 +11,15 @@
   </head>
 
   <body>
-    <h1>American Family Care <h1>
+    <h1><%= link_to "American Family Care", root_path %> <h1>
     <h2> mobile app admin<h2>
     <button> <%= link_to 'articles', articles_path %> </button>
     <button> <%= link_to "Sign in", login_path %></button>
-    <%= yield %>
+    <% if current_admin.present? %>
+
+    <%= button_to "Profile", admin_path(@current_admin), method: :get %>
+    <% end %>
+    <%= yield %> 
   </body>
+
 </html>

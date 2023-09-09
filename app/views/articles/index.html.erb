@@ -1,5 +1,26 @@
 <h1>full list of articles<h1>
 
-<%= @articles.each do |article|%>
-    <%=link_to article.title, artile_path(article)%>
-<%end%>
+<h3>
+
+<table>
+    <thead>
+        <tr>
+            <th> Title</th>
+            <th> Article preview</th>
+        </tr>
+    </thead>
+    <tbody>
+<%= @articles.each do |article| %>
+        <tr>
+            <th> 
+                <%=link_to article.title, article_path(article), method: :get %>
+            </th>
+       
+            <th> 
+                <%= article.body.truncate(30) %>
+            </th>
+        </tr>
+    </tbody>
+<%end %>
+</table>
+<h3>
