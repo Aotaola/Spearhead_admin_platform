@@ -7,3 +7,5 @@
 <br/>
 
 <%= image_tag(@article.photo.url) if @article.photo? %>
+<br/>
+<p>this article was written by</p><%= @admin.name %>

@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
         @articles = Article.all 
     end
     def show
-
+        @admin = @article.admin
     end
     def new
         @article = Article.new
