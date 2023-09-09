@@ -24,18 +24,16 @@ class ArticlesController < ApplicationController
 
     end
     def update
-        @article = Article.update(article_params)
-        if @article.save
+        if @article.update(article_params)
             redirect_to @article, notice: "article was successfully updated"
          else
-            render_errors(@article)
+            flash[:notice]= "there was an error saving your correction"
             render :edit
          end
     end
     def destroy
         @article.destroy
         redirect_to articles_path, notice: "article was successfully destroyed"
-
     end
 
     private 
