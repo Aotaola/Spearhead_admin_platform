@@ -3,17 +3,19 @@ module Api
     module V1
 
         class ArticlesController < ApplicationController
-            
+
             skip_before_action :verify_authenticity_token
 
             before_action :set_article, only: [ :show, :edit, :update, :destroy]
             
             def index
                 @articles = Article.all 
+
                 render json: @articles
             end
             def show
-                render json: @article
+                @admin_article = @article.admin
+                render json: {article: @article, admin: @admin_article}
             end
             def new
                 @article = Article.new
