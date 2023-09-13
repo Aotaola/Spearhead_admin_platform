@@ -1,5 +1,6 @@
-<%= @admin.name%>
-<%= image_tag(@admin.photo.url) if @admin.photo? %>
-<%= link_to "write a new article", new_article_path %>
-<%= button_to 'Edit Profile', edit_admin_path, method: :get %>
-<%= button_to 'Close Session', logout_path, method: :delete %>
+<div class='profile-container'>
+    <h2  class='profile-name'><%= @admin.name%></h2>
+    <div class= 'profile-photo'><%= image_tag(@admin.photo.url) if @admin.photo? %></div>
+</div>
+    <button><%= link_to 'Edit Profile', edit_admin_path, method: :get, class: 'btn-link' %></button>
+    <button><%= link_to 'Logout', logout_path, method: :delete, class: 'btn-link' %></button>

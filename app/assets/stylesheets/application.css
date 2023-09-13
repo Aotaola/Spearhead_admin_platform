@@ -274,3 +274,38 @@ button:active {
     background-color: midnightblue;
 }
 
+.profile-name {
+    color: midnightblue;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+    letter-spacing: 4.2px;
+    font-weight: 400;
+}
+.profile-photo {
+    width: 200px; /* You can adjust the size as needed */
+    height: 200px;
+    border-radius: 40%; /* Makes the photo circular */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures that the image covers the div without being stretched or squeezed */
+}
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    max-width: 400px; /* Adjust as necessary */
+    margin: 20px auto; /* center the div horizontally */
+    /* padding: 20px; */
+    border-radius: 8px;
+}
+    
+
+
+
