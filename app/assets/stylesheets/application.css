@@ -14,27 +14,40 @@
  *= require_self
  */
  body, html {
+    letter-spacing: 3px;
+    font-weight: 200;
     display: inline-block;
     align-items: center;
     justify-content: center;
     align-content: center;
-    background-color: aliceblue;
+    background-color: crimson;
     height: 100%;
     padding-left: 15%;
     padding-right: 15%;
     padding-bottom: 3%;
  }
+ .container {
+    display: inline-block; 
+    background-color: aliceblue;
+    padding: .75rem .9rem;
+    border-radius: 3rem;
+    box-sizing: border-box;  
+    box-shadow: 0px 5px 20px darkslateblue; /* horizontal offset, vertical offset, blur radius, color */
+ }
  h1{
     display: flex;
     justify-content: center;
  }
- .mobile-app-landing{
+ h2 {
     display: flex;
     align-items: center;
-    color: whitesmoke;
+    justify-content: center;
+    color: steelblue;
  }
  .site-header {
-    color: crimson;
+    letter-spacing: 4.2px;
+    font-weight: 200;
+    color: aliceblue;
     font: 'century-gothic';
     display: center;
     justify-content: center;
@@ -43,31 +56,41 @@
     padding: 2.5%;
     border-radius: 6rem;
  }
+ .button-container {
+    height: 34rem;
+    width: 55rem;  /* This makes the button container stretch across the entire width of its parent container */
+    display: inline-block;  
+    flex-direction: column;  
+}
+
+ button {
+    justify-content: space-evenly;
+    width: 10rem;  /* Make each button take the full width of the button container */
+    padding: 1rem 2rem; /* Add some vertical space between buttons */
+    border-radius: 3.75rem;
+    background-color: aliceblue;
+    color: red;
+    box-sizing: border-box;  /* Ensures that any padding or border on the button doesn't increase its total width */
+    text-align: center;  /* Center the text inside the button */
+}
+.btn-link {
+    margin: 0.5rem 0.5rem;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+    color: steelblue;
+}
  .site-header:hover {
-    color: aliceblue;
+    letter-spacing: 4.4px;
+    font-weight: 250;
+    color: crimson;
     font: 'century-gothic';
     display: center;
-    background-color: crimson;
+    background-color: aliceblue;
     border-radius: 6rem;
     padding: 2.5%;
     justify-content: center;
     text-decoration: underline;
     top: 8%;
     transition-duration: 15ms;
- }
- .container {
-    display: inline-block; 
-    background-color: crimson;
-    padding-left: 20rem; 
-    padding-top: 7rem; 
-    padding-right: 25rem; 
-    padding-bottom: 7rem;
-    border-radius: 3rem;
- }
- .button-container {
-    display: inline-block;
-    /* margin-top: 5rem;
-    margin-bottom: 5rem;
-    margin-left: 15rem;
-    margin-right: 15rem */
  }
