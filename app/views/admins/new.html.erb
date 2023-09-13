@@ -1,23 +1,26 @@
-<h3>Signup</h3>
-<%= form_with model: @admin do |f|%>
-    <div>
-        <%= f.label :name%>
-        <%= f.text_field :name, placeholder: "please write your full name"%>
-    </div>
-    <div>
-        <%= f.label :email%>
-        <%= f.text_field :email, placeholder: "input your work or personal email"%>
-    </div>
-    <div>
-        <%= f.label :password%>
-        <%= f.password_field :password, placeholder: "choose a password"%>
-    </div>
-    <div>
-        <%= f.label :confirm_password %>
-        <%= f.password_field :confirm_password %>
-    </div>
-    <div>
+<div class='signup-container'>
+    <%= form_with model: @admin do |f|%>
+        <div>
+            <%= f.label :name%>
+            <%= f.text_field :name, placeholder: "please write your full name"%>
+        </div>
+        <div>
+            <%= f.label :email%>
+            <%= f.text_field :email, placeholder: "input your work or personal email"%>
+        </div>
+        <div>
+            <%= f.label :password%>
+            <%= f.password_field :password, placeholder: "choose a password"%>
+        </div>
+        <div>
+            <%= f.label :confirm_password %>
+            <%= f.password_field :confirm_password %>
+        </div>
+        <br/>
+        
         <%= f.file_field :photo, placeholder: 'upload a photo' %>
-    </div>
-    <%= f.submit "Signup!"%>
-<%end%>
+        
+        <%= f.submit "Signup!"%>
+        <br/>
+    <%end%>
+</div>

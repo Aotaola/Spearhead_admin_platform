@@ -14,7 +14,7 @@
  *= require_self
  */
  body, html {
-    letter-spacing: 3px;
+    /* letter-spacing: 3px; */
     font-weight: 200;
     display: inline-block;
     align-items: center;
@@ -29,6 +29,7 @@
  .container {
     display: inline-block; 
     background-color: aliceblue;
+    justify-content: center;
     padding: .75rem .9rem;
     border-radius: 3rem;
     box-sizing: border-box;  
@@ -42,7 +43,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: steelblue;
+    color: midnightblue;
  }
  .site-header {
     letter-spacing: 4.2px;
@@ -65,20 +66,52 @@
 
  button {
     justify-content: space-evenly;
-    width: 10rem;  /* Make each button take the full width of the button container */
-    padding: 1rem 2rem; /* Add some vertical space between buttons */
+    padding: 1rem 2rem;
     border-radius: 3.75rem;
     background-color: aliceblue;
-    color: red;
+    border-color: steelblue;
     box-sizing: border-box;  /* Ensures that any padding or border on the button doesn't increase its total width */
     text-align: center;  /* Center the text inside the button */
 }
+button:hover {
+    background-color: royalblue;
+    justify-content: space-evenly;
+    padding: 1rem 2rem; /* Add some vertical space between buttons */
+    border-radius: 3.75rem;
+    border-color: lightsteelblue;
+    box-sizing: border-box;  /* Ensures that any padding or border on the button doesn't increase its total width */
+    box-shadow: 5px 0px 10px steelblue; /* Remove
+    text-align: center;  /* Center the text inside the button */
+    transition-delay: .05s ease;
+}
+button:active {
+    background-color: cornflowerblue;
+    justify-content: space-evenly;
+    padding: 1rem 2rem; /* Add some vertical space between buttons */
+    border-radius: 3.75rem;
+    border-color: aliceblue;
+    box-sizing: border-box;  /* Ensures that any padding or border on the button doesn't increase its total width */
+    box-shadow: 0px 5px 10px lavender; /* Remove
+    text-align: center;  /* Center the text inside the button */
+    transition-delay: .02s ease;
+}
 .btn-link {
-    margin: 0.5rem 0.5rem;
+    background-color: transparent !important;
+    padding: .6rem 1.4rem;
     font-size: 20px;
     font-weight: 300;
     text-decoration: none;
-    color: steelblue;
+    color: lightsteelblue;
+}
+.btn-link:hover {
+    background-color: royalblue;
+    /* margin: 0.5rem 0.5rem; */
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+    color: aliceblue;
+    transition-delay: .05s ease;
+    
 }
  .site-header:hover {
     letter-spacing: 4.4px;
@@ -86,11 +119,158 @@
     color: crimson;
     font: 'century-gothic';
     display: center;
-    background-color: aliceblue;
+    background-color: lavender;
     border-radius: 6rem;
     padding: 2.5%;
     justify-content: center;
     text-decoration: underline;
     top: 8%;
-    transition-duration: 15ms;
+    transition-duration: .7s ;
+    box-shadow: 0px 5px 20px aliceblue;
  }
+/* Login container styling */
+.login-container {
+    padding: 20px 40px;
+}
+
+.login-container div {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Styling */
+.login-container label {
+    margin-bottom: 8px;
+    color: midnightblue;
+    font-weight: bold;
+}
+
+/* Input fields styling */
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid midnightblue;
+    color: midnightblue;
+    background-color: #FFF;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: crimson;
+    outline: none;
+}
+
+/* Login button styling */
+.login-container input[type="submit"] {
+    width: 100%;
+    background-color: crimson;
+    color: aliceblue;
+    border: none;
+    padding: 12px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: midnightblue;
+}
+
+/* Signup link styling */
+.login-container a {
+    color: crimson;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-container a:hover {
+    color: midnightblue;
+}
+
+/* Signup container styling */
+.signup-container {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 20px 40px;
+    width: 80%;
+    height: 90%
+}
+
+.signup-container h3 {
+    color: midnightblue;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.signup-container div {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Label Styling */
+.signup-container label {
+    margin-bottom: 8px;
+    color: midnightblue;
+    font-weight: bold;
+}
+
+/* Input fields styling */
+.signup-container input[type="text"],
+.signup-container input[type="password"],
+.signup-container input[type="email"]
+{ 
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid midnightblue;
+    color: midnightblue;
+    background-color: #FFF;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.signup-container input[type="text"]:focus,
+.signup-container input[type="password"]:focus,
+.signup-container input[type="email"]:focus {
+    border-color: crimson;
+    outline: none;
+}
+
+.signup-container input[type="file"] {
+    padding: 8px 0;  /* reduce padding for file input */
+    width: 35%;
+    color:midnightblue;
+    background-color: aliceblue;
+}
+
+/* Signup button styling */
+.signup-container input[type="submit"] {
+    width: 30%;
+    background-color: crimson;
+    color: aliceblue;
+    border: none;
+    padding: 12px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.signup-container input[type="submit"]:hover {
+    background-color: midnightblue;
+}
+
