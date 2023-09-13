@@ -10,18 +10,23 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body style= "display: inline-block; justify-content: center; padding-left: 15rem; padding-top: 5rem; padding-right: 7rem; padding-bottom: 5rem" >
-    <h1><%= link_to "American Family Care", root_path %> </h1>
-    <br/>
-    <h2> mobile app admin</h2>
-    <button> <%= link_to 'articles', articles_path %> </button>
-     <br/>
-    <button> <%= link_to "Sign in", login_path %></button>
-     <br/>
-    <% if current_admin.present? %>
-    <%= button_to "Profile", admin_path(@current_admin), method: :get %>
-    <% end %>
-    <%= yield %> 
+  <body>
+    <h1><%= link_to "American Family Care", root_path, class:'site-header' %> </h1>
+      <br/>
+    <div class='container'>
+      <br/>
+      <h2 class="mobile-app-ladning"> Mobile App Admin</h2>
+      <div class='button-container' >
+        <button> <%= link_to 'articles', articles_path %> </button>
+        <br/>
+        <button> <%= link_to "Sign in", login_path %></button>
+        <br/>
+        <% if current_admin.present? %>
+        <%= button_to "Profile", admin_path(@current_admin), method: :get %>
+        <% end %>
+        <%= yield %> 
+      </div>
+    </div>
   </body>
 
 </html>
