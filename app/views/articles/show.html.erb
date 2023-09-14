@@ -9,3 +9,5 @@
 <%= image_tag(@article.photo.url) if @article.photo? %>
 <br/>
 <p>this article was written by</p><%= @admin.name %>
+<%= link_to 'Edit', edit_article_path(@article.id), method: :get %>
+<%= button_to 'destroy', article_path(@article.id), method: :delete %>

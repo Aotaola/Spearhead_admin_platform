@@ -1,33 +1,22 @@
-
-<h3>
-<table>
-    <thead>
-        <tr>
-            <th> Title</th>
-            <th> description </th>
-            <th> Article preview</th>
-            <th> Actions </th>
-        </tr>
-    </thead>
-    <tbody>
-<% @articles.each do |article| %>
-        <tr>
-            <th> 
-                <%=link_to article.title, article_path(article), method: :get %>
-            </th>
-            <th> 
-                <%= article.description %>
-            </th>
-            
-            <th> 
-                <%= article.body.truncate(30) %>
-            </th>
-            <th>
-                <%= link_to 'Edit', edit_article_path(article), method: :get %>
-                <%= button_to 'destroy', article_path(article), method: :delete %>
-            </th>
-        </tr>
-    </tbody>
-<%end %>
-</table>
-<h3>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th> Title</th>
+                <th> Description </th>
+            </tr>
+        </thead>
+        <tbody>
+    <% @articles.each do |article| %>
+            <tr>
+                <th> 
+                    <%=link_to article.title.truncate(100), article_path(article), method: :get %>
+                </th>
+                <th> 
+                    <%= article.description.truncate(100) %>
+                </th>
+            </tr>
+        </tbody>
+    <%end %>
+    </table>
+</div>

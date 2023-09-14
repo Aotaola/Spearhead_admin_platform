@@ -369,6 +369,58 @@ button:active {
     background-color: midnightblue;
 }
 
+/* Main table styling */
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 20px 0;
+}
+
+/* Table headers styling */
+table thead th {
+    background-color: #f8f9fa; /* Light gray from Bootstrap for headers */
+    padding: 12px 15px;
+    border: 1px solid #dee2e6; /* Border color taken from Bootstrap */
+    text-align: left;
+    font-weight: bold;
+    color: steelblue; /* Dark gray color for text */
+}
+
+/* Table body rows and cells styling */
+table tbody tr {
+    border-bottom: 1px solid #dee2e6; /* Border for the rows */
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa; /* Light gray for odd rows to achieve striping */
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #ffffff; /* White for even rows */
+}
+
+table tbody th,
+table tbody td {
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    text-align: left; 
+}
+
+/* Link styling in table */
+table tbody th a {
+    color: #007bff; /* Blue color from Bootstrap for links */
+    text-decoration: none;
+    transition: color 0.3s;
+    text-align: left;
+    display: block;
+   
+}
+
+table tbody th a:hover {
+    color: #0056b3; /* Darker shade of blue for hover */
+}
+
+
     
 
 
