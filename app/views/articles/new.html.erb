@@ -1,16 +1,18 @@
-<h4>new Article<h4>
-<%= form_with model: @article do |f|%>
-    <div>
-        <%= f.text_field :title, placeholder: 'title to your article'%>
-    </div>
-    <div>
-        <%= f.text_area :description, placeholder: 'subtitle of your article'%>
-    </div>
-    <div>
-        <%= f.text_area :body, placeholder: 'body of your article'%>
-    </div>
-    <div>
-        <%= f.file_field :photo, placeholder: 'upload a photo'%>
-    </div>
-    <%= f.submit "submit your article", method: :post %>
-<% end %>
+<div class='new-article-container'>
+    <h3>New Article</h3>
+    <%= form_with model: @article do |f|%>
+        <div>
+            <%= f.text_field :title, placeholder: 'Title'%>
+        </div>
+        <div>
+            <%= f.text_field :description, placeholder: 'Subtitle'%>
+        </div>
+        <div>
+            <%= f.text_area :body, placeholder: 'Body'%>
+        </div>
+        <div>
+            <%= f.file_field :photo, placeholder: 'upload a photo'%>
+        </div>
+        <%= f.submit "submit your article", method: :post %>
+    <% end %>
+</div>

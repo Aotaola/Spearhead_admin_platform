@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- body, html {
+ body,html {
     /* letter-spacing: 3px; */
     font-weight: 200;
     display: inline-block;
@@ -30,7 +30,7 @@
     display: inline-block; 
     background-color: aliceblue;
     justify-content: center;
-    padding: .75rem .9rem;
+    padding: 2rem 1.7rem;
     border-radius: 3rem;
     box-sizing: border-box;  
     box-shadow: 0px 5px 20px darkslateblue; /* horizontal offset, vertical offset, blur radius, color */
@@ -305,6 +305,70 @@ button:active {
     /* padding: 20px; */
     border-radius: 8px;
 }
+/* New Article Container */
+.new-article-container {
+    padding: 1rem;
+    border-radius: 8rem ;
+    background-color: aliceblue;
+    max-width: 800px; 
+    margin: 20px auto; 
+}
+
+.new-article-container h3 {
+    color: crimson;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.new-article-container div {
+    margin-bottom: 20px;
+}
+
+/* Input and Textarea fields */
+.new-article-container input[type="text"],
+.new-article-container textarea
+
+{
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid midnightblue;
+    border-radius: 4px;
+    color: midnightblue;
+    background-color: #FFF;
+    transition: border-color 0.3s ease;
+}
+
+.new-article-container textarea {
+    height: 100px; 
+    resize: vertical; 
+}
+
+.new-article-container textarea[name="body"] {
+    height: 200px; 
+}
+
+.new-article-container input[type="text"]:focus,
+.new-article-container textarea:focus,
+.new-article-container input[type="file"]:focus {
+    border-color: crimson;
+    outline: none;
+}
+.new-article-container input[type="submit"] {
+    background-color: crimson;
+    color: aliceblue;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.new-article-container input[type="submit"]:hover {
+    background-color: midnightblue;
+}
+
     
 
 
