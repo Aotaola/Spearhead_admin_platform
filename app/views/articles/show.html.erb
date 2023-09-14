@@ -1,13 +1,24 @@
-<%= @article.title %>
-<br/>
-<%= @article.description %>
-<br/>
-
-<%= @article.body %>
-<br/>
-
-<%= image_tag(@article.photo.url) if @article.photo? %>
-<br/>
-<p>this article was written by</p><%= @admin.name %>
-<%= link_to 'Edit', edit_article_path(@article.id), method: :get %>
-<%= button_to 'destroy', article_path(@article.id), method: :delete %>
+<div class="article-container">
+    <h1 class="article-title"><%= @article.title %></h1>
+    <h3 class="article-description"><%= @article.description %></h3>
+    
+    <div class="article-body">
+        <% if @article.photo? %>
+            <div class="article-image">
+                <%= image_tag(@article.photo.url) %>
+            </div>
+        <% end %>
+        <%= @article.body %>
+    </div>
+    
+    
+    <div class="article-author">
+        <p>This article was written by <span><%= @admin.name %></span></p>
+    </div>
+    
+    <div class="article-actions" >
+        <%= link_to 'Edit', edit_article_path(@article.id), method: :get, class: "btn btn-edit" %>
+        <%= button_to 'Destroy', article_path(@article.id), method: :delete, class: "btn btn-destroy" %>
+    </div>
+    <br/>
+</div>

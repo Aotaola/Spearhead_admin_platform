@@ -1,24 +1,30 @@
-<h1> here we edit the article </h1>
 
-<%=  form_with model: @article do |f| %>
+<div class='new-article-container'>
+    <h3>!!Edit : <%= @article.title %></h3>
+    <%=  form_with model: @article do |f| %>
 
-    <div>
-        <%= f.label :title %>
-        <%= f.text_area :title, placeholder: "title" %>
-    </div>
-    <div>
-        <%= f.label :description %>
-        <%= f.text_area :description, placeholder: "body" %>
-    </div>
+        <div>
+            <%= f.label :title %>
+            <%= f.text_field :title, placeholder: "title" %>
+        </div>
+        <div>
+            <%= f.label :description %>
+            <%= f.text_field :description, placeholder: "body" %>
+        </div>
 
-    <div>
-        <%= f.label :body %>
-        <%= f.text_area :body, placeholder: "body" %>
-    </div>
-    
-    <div class="form-group mt-3 container-sm">
-        <%= f.submit "Update" %>
-    </div>
+        <div>
+            <%= f.label :body %>
+            <%= f.text_area :body, placeholder: "body" %>
+        </div>
+        <div class="file-and-update">
+            <div class="file-input">
+                <%= f.file_field :photo, placeholder: 'upload a photo'%>
+            </div>
+            
+            <div class="update-button">
+                <%= f.submit "Update" %>
+            </div>
+         </div>
 
-<% end %>
-   
+    <% end %>
+</div>

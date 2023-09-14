@@ -10,9 +10,13 @@
         <div>
             <%= f.text_area :body, placeholder: 'Body'%>
         </div>
-        <div>
-            <%= f.file_field :photo, placeholder: 'upload a photo'%>
+        <div class="file-and-update">
+            <div class="file-input">
+                <%= f.file_field :photo, placeholder: 'upload a photo'%>
+            </div>
+            <div class="update-button">
+            <%= f.submit "submit your article", method: :post %>
+            </div>
         </div>
-        <%= f.submit "submit your article", method: :post %>
     <% end %>
 </div>
