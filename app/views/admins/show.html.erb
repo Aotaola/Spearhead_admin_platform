@@ -3,4 +3,4 @@
     <div class= 'profile-photo'><%= image_tag(@admin.photo.url) if @admin.photo? %></div>
 </div>
     <button><%= link_to 'Edit Profile', edit_admin_path, method: :get, class: 'btn-link' %></button>
-    <button><%= link_to 'Logout', logout_path, method: :delete, class: 'btn-link' %></button>
+    <%= button_to 'Logout', logout_path, method: :delete, class: 'btn btn-destroy' %>
