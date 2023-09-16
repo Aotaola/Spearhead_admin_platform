@@ -11,21 +11,35 @@
   </head>
 
   <body>
+      <div class='actual-button-container'>
+        <button><%= link_to 'Articles', articles_path, class: 'btn-link' %> </button>
+        <br/>
+        <button><%= link_to "Sign in", login_path, class: 'btn-link' %></button>
+        <br/>
+    
+      </div>
+
+    <div class='main-container'>
     <h1><%= link_to "American Family Care", root_path, class:'site-header' %> </h1>
-      
     <div class='container'>
       <div class='button-container' >
-        <button><%= link_to 'Articles', articles_path, class: 'btn-link' %> </button>
-        <button><%= link_to "Sign in", login_path, class: 'btn-link' %></button>
-        
-        <% if current_admin.present? %>
-        <button><%= link_to "Profile", admin_path(@current_admin), method: :get,  class: 'btn-link'%></button>
-        <button><%= link_to "Article+", new_article_path, class: 'btn-link'%></button>
-        <% end %>
+        <%#  the content from all the views will render here %>
         <%= yield %> 
       </div>
     </div>
     <h2 class="mobile-app-ladning"> Mobile App Admin</h2>
+    </div>
+      <div class='actual-button-container-b'>
+        <% if current_admin.present? %>
+        <button><%= link_to "Profile", admin_path(@current_admin), method: :get,  class: 'btn-link'%></button>
+        <br/>
+        <button><%= link_to "Article+", new_article_path, class: 'btn-link'%></button>
+        <br/>
+         <button><%= link_to 'Edit Profile', edit_admin_path, method: :get, class: 'btn-link' %></button>
+         <br/>
+         <%= button_to 'Logout', logout_path, method: :delete, class: 'btn btn-destroy' %>
+        <% end %>
+      </div>
   </body>
 
 </html>

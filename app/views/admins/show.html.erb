@@ -1,6 +1,11 @@
-<div class='profile-container'>
-    <h2  class='profile-name'><%= @admin.name%></h2>
-    <div class= 'profile-photo'><%= image_tag(@admin.photo.url) if @admin.photo? %></div>
+<div class = 'main-container'>
+    <div class='container'>
+        <div>
+            <div class='profile-container'>
+                <h2  class='profile-name'><%= @admin.name%></h2>
+                <div class= 'profile-photo'><%= image_tag(@admin.photo.url) if @admin.photo? %></div>
+            </div>
+        </div>
+    </div>
 </div>
-    <button><%= link_to 'Edit Profile', edit_admin_path, method: :get, class: 'btn-link' %></button>
-    <%= button_to 'Logout', logout_path, method: :delete, class: 'btn btn-destroy' %>
+
