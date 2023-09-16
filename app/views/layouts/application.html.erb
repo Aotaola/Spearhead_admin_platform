@@ -24,7 +24,8 @@
     <div class='container'>
       <div class='button-container' >
         <%#  the content from all the views will render here %>
-        <%= yield %> 
+        <%= yield %>
+        <%#  %>
       </div>
     </div>
     <h2 class="mobile-app-ladning"> Mobile App Admin</h2>
@@ -35,9 +36,8 @@
         <br/>
         <button><%= link_to "Article+", new_article_path, class: 'btn-link'%></button>
         <br/>
-         <button><%= link_to 'Edit Profile', edit_admin_path, method: :get, class: 'btn-link' %></button>
-         <br/>
-         <%= button_to 'Logout', logout_path, method: :delete, class: 'btn btn-destroy' %>
+        <br/>
+        <%= button_to 'Logout', logout_path, method: :delete, class: 'btn btn-destroy' %>
         <% end %>
       </div>
   </body>

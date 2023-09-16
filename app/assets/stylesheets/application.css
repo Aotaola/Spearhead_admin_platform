@@ -54,6 +54,7 @@
 .actual-button-container-b {
     justify-content: end, space-evenly;
     display: flex;
+    align-items: center;
     flex-direction: column;
     padding-right: 5%;
     padding-left: 5%;
@@ -101,6 +102,7 @@
  button {
     justify-content: center;
     padding: 1rem 2rem;
+    height: 15%;
     border-radius: 3.75rem;
     background-color: aliceblue;
     border-color: steelblue;
@@ -131,8 +133,7 @@ button:active {
 }
 .btn-link {
     background-color: transparent !important;
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
     width: 100%;
     font-size: 20px;
     font-weight: 300;
@@ -319,11 +320,13 @@ button:active {
     font-weight: 400;
 }
 .profile-photo {
+    display: flex;
+    justify-content: center;
     width: 200px; /* You can adjust the size as needed */
     height: 200px;
+
     border-radius: 40%; /* Makes the photo circular */
     overflow: hidden;
-    margin-bottom: 20px;
 }
 .profile-photo img {
     width: 80%;
@@ -334,11 +337,10 @@ button:active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 70%;
-    max-width: 400px; /* Adjust as necessary */
+    width: 50%;
+    height: 100%;
+    
     margin: 20px auto; /* center the div horizontally */
-    /* padding: 20px; */
     border-radius: 8px;
 }
 /* New Article Container */
@@ -473,15 +475,10 @@ table tbody th a:hover {
     color: cornflowerblue; 
 }
 .article-container {
-    position: relative; 
-    max-width: 800px;
     margin: 30px auto;
     padding: 20px;
     background-color: aliceblue;
-    
-    
 }
-
 
 .article-title {
     color: midnightblue;
@@ -520,16 +517,10 @@ table tbody th a:hover {
 .article-author span {
     font-weight: bold;
 }
-
 .btn {
-
+    height: 100%;
     text-decoration: none;
-    display: flex;
-    flex-direction: row;
-    margin-right: 10px;
-    margin-left: 5px;
 }
-
 .btn-edit {
     background-color: midnightblue;
     color: aliceblue;
