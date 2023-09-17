@@ -1,15 +1,15 @@
-<div class='container'>
-
-    <div>
+<div>
+    <div class="search-bar">
         <%= search_form_for(@query) do |f| %>
-          <%= f.search_field :title_or_description_cont_any, placeholder: "Search..." %>
+          <%= f.search_field :title_cont_any, placeholder: "Search...", class: 'search-bar-input'%>
           <%= f.submit "Search!"%>
         <% end %>
     </div>
       <% if @art.present? %>
+        <div class="search-bar-results"> 
         <h4><%= pluralize(@art.count, 'Result')%></h4> 
-        <div> 
-          <% @art.each do |article|%>
+
+          <% @art.order(:title).each do |article|%>
           <p>
             <%= link_to article.title, article_path(article) %>
           </p>
@@ -21,7 +21,7 @@
     <table>
         <thead>
             <tr>
-              <th> Title</th>
+              <th>Title</th>
               <th> Description </th>
             </tr>
         </thead>
@@ -46,6 +46,6 @@
             inner_window: 5, 
             outer_window: 1,  
             page_links: true, 
-            params: { controller: 'collections', action: 'index' } %>
+            params: { controller: 'articles', action: 'index' } %>
       </div>
 </div>

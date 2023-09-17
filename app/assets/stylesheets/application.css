@@ -35,7 +35,7 @@
     padding: 2rem 1.7rem;
     border-radius: 3rem;
     box-sizing: border-box;  
-    box-shadow: 0px 5px 10px darkslateblue; /* horizontal offset, vertical offset, blur radius, color */
+    box-shadow: 0px 5px 30px darkslateblue; /* horizontal offset, vertical offset, blur radius, color */
     flex-grow: 1;
  }
 
@@ -543,6 +543,93 @@ table tbody th a:hover {
     align-items: center;
     background-color: maroon;
     transition: background-color 0.6s ease-in-out
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: royalblue;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 7px;
+}
+.search-bar input[type="search"] {
+    flex: 1;
+    padding: 1rem;
+    font-family: century;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+    box-shadow: 0 2px 5px lavender (0, 0, 0, 0.1);
+}
+.search-bar-input{
+    width: 20rem ;
+    padding-left: 10px
+}
+.article_search {
+    display: flex;
+    flex-direction: row;
+    width: 20rem;
+}
+
+/* Style for the search button */
+.search-bar input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 80%;
+    background-color: royalblue;
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar input[type="submit"]:hover {
+    background-color: cornflowerblue;
+}
+.search-bar-results {
+    margin: 20px 0;
+}
+
+.search-bar-results p {
+    margin: 10px 0;
+}
+
+.search-bar-results a {
+    color: steelblue;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.search-bar-results a:hover {
+    color: steelblue;
+}
+/* Container for pagination */
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Styles for each page link */
+.pagination a {
+    margin: 0 5px;
+    color: midnightblue;
+    text-decoration: none;
+}
+
+/* Styles for the active page link */
+.pagination .current {
+    text-decoration: underline;
+}
+
+/* Styles for disabled controls */
+.pagination .disabled {
+    color: steelblue;
 }
 
 

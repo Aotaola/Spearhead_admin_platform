@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
     def index
         @query = Article.ransack(params[:q])
         @art = params[:q].blank? ? Article.none : @query.result(distinct: true)
-        @articles = Article.paginate(page: params[:page], per_page: 10)
+        @articles = Article.paginate(page: params[:page], per_page: 6)
     end
     def show
         @admin = @article.admin
