@@ -99,54 +99,54 @@
     flex-direction: column;  
 }
 
- button {
+button {
     justify-content: center;
     padding: 1rem 2rem;
     height: 15%;
+    border: none;
     border-radius: 3.75rem;
-    background-color: aliceblue;
+    background-color: transparent;
     border-color: steelblue;
-    box-sizing: border-box;  /* Ensures that any padding or border on the button doesn't increase its total width */
-    text-align: center;  /* Center the text inside the button */
+    box-sizing: border-box; 
+    text-align: center;  
 }
 button:hover {
-    background-color: royalblue;
+    background-color: lavender;
     justify-content: space-evenly;
-    padding: 1rem 2rem; /* Add some vertical space between buttons */
+    padding: 1rem 2rem;
     border-radius: 3.75rem;
-    border-color: lightsteelblue;
-    box-sizing: border-box;  /* Ensures that any padding or border on the button doesn't increase its total width */
-    box-shadow: 5px 0px 10px steelblue; /* Remove
-    text-align: center;  /* Center the text inside the button */
-    transition-delay: .05s ease;
+    /* border-color: lightsteelblue; */
+    box-sizing: border-box;
+    box-shadow: 1px 1px 15px aliceblue;
+    text-align: center;  
+    transition-duration: .5s 
 }
 button:active {
-    background-color: cornflowerblue;
+    font: 'century-gothic';
     justify-content: space-evenly;
-    padding: 1rem 2rem; /* Add some vertical space between buttons */
+    padding: 1rem 2rem; 
     border-radius: 3.75rem;
-    border-color: aliceblue;
-    box-sizing: border-box;  /* Ensures that any padding or border on the button doesn't increase its total width */
-    box-shadow: 0px 5px 10px lavender; /* Remove
-    text-align: center;  /* Center the text inside the button */
-    transition-delay: .04s ease;
+    border-color: crimson;
+    box-sizing: border-box;  
+    box-shadow: 0px 5px 40px white; 
+    text-align: center;  
+    transition-delay: none; 
 }
 .btn-link {
     background-color: transparent !important;
     display: inline-block;
     width: 100%;
+    font: 'century-gothic';
     font-size: 20px;
     font-weight: 300;
     text-decoration: none;
-    color: lightsteelblue;
+    color: lightblue;
 }
 .btn-link:hover {
-    background-color: royalblue;
-    /* margin: 0.5rem 0.5rem; */
     font-size: 20px;
     font-weight: 400;
     text-decoration: none;
-    color: aliceblue;
+    color: crimson;
     transition-delay: .05s ease;
     
 }
@@ -518,7 +518,10 @@ table tbody th a:hover {
     font-weight: bold;
 }
 .btn {
-    height: 100%;
+    font-family: century-gothic;
+    font-size: 18px;
+    height: 3rem;
+    color: lightsteelblue;
     text-decoration: none;
 }
 .btn-edit {
@@ -533,12 +536,12 @@ table tbody th a:hover {
 
 .btn-destroy {
     background-color: crimson;
-    color: aliceblue;
+    
     transition: background-color 0.2s ease-in-out;
 }
 
 .btn-destroy:hover {
-    background-color: red;
+    background-color: maroon;
     transition: background-color 0.6s ease-in-out
 }
 
