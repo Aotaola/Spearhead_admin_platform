@@ -3,7 +3,7 @@ class Article < ApplicationRecord
 
   mount_uploader :photo, ImageUploader
 
-  attr_accessor :admin_id
+  #attr_accessor :admin_id
 
   def self.ransackable_attributes(auth_object = nil)
       ["title"]

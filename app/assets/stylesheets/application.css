@@ -35,7 +35,7 @@
     padding: 2rem 1.7rem;
     border-radius: 3rem;
     box-sizing: border-box;  
-    box-shadow: 0px 5px 30px darkslateblue; /* horizontal offset, vertical offset, blur radius, color */
+    box-shadow: 0px 5px 30px steelblue; /* horizontal offset, vertical offset, blur radius, color */
     flex-grow: 1;
  }
 
@@ -554,6 +554,10 @@ table tbody th a:hover {
     border-radius: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 7px;
+}
+.mobile-app-landing {
+    color: lightsteelblue;
+    font-weight: 300;
 }
 .search-bar input[type="search"] {
     flex: 1;
