@@ -2,7 +2,9 @@ class ArticlesController < ApplicationController
     before_action :set_article, only: [ :show, :edit, :update, :destroy]
 
     def index
-        @articles = Article.all 
+        @query = Article.ransack(params[:q])
+        @art = params[:q].blank? ? Article.none : @query.result(distinct: true)
+        @articles = Article.paginate(page: params[:page], per_page: 10)
     end
     def show
         @admin = @article.admin

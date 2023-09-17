@@ -1,10 +1,28 @@
 <div class='container'>
+
+    <div>
+        <%= search_form_for(@query) do |f| %>
+          <%= f.search_field :title_or_description_cont_any, placeholder: "Search..." %>
+          <%= f.submit "Search!"%>
+        <% end %>
+    </div>
+      <% if @art.present? %>
+        <h4><%= pluralize(@art.count, 'Result')%></h4> 
+        <div> 
+          <% @art.each do |article|%>
+          <p>
+            <%= link_to article.title, article_path(article) %>
+          </p>
+          <br/>
+          <%end%>
+        </div>
+      <%end%>
     
     <table>
         <thead>
             <tr>
-                <th> Title</th>
-                <th> Description </th>
+              <th> Title</th>
+              <th> Description </th>
             </tr>
         </thead>
         <tbody>
@@ -20,4 +38,14 @@
         </tbody>
     <%end %>
     </table>
+      <div>
+        <%= will_paginate @articles, 
+          class: 'pagination', 
+            previous_label: 'Previous', 
+            next_label: 'Next', 
+            inner_window: 5, 
+            outer_window: 1,  
+            page_links: true, 
+            params: { controller: 'collections', action: 'index' } %>
+      </div>
 </div>

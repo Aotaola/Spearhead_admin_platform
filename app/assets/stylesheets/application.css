@@ -322,10 +322,9 @@ button:active {
 .profile-photo {
     display: flex;
     justify-content: center;
-    width: 200px; /* You can adjust the size as needed */
+    width: 200px; 
     height: 200px;
-
-    border-radius: 40%; /* Makes the photo circular */
+    border-radius: 40%; 
     overflow: hidden;
 }
 .profile-photo img {
@@ -339,8 +338,7 @@ button:active {
     align-items: center;
     width: 50%;
     height: 100%;
-    
-    margin: 20px auto; /* center the div horizontally */
+    margin: 20px auto; 
     border-radius: 8px;
 }
 /* New Article Container */
@@ -409,19 +407,19 @@ button:active {
 }
 
 .file-and-update {
-    display: flex;             /* Enable flex layout */
-    align-items: center;       /* Align vertically centered */
+    display: flex;           
+    align-items: center;     
     justify-content: space-between; /* Give some space between the two inner divs */
     gap: 10px;                 /* Space between flex items (in case it's supported in your browser version) */
 }
 
 .file-input {
-    flex-grow: 1;             /* Allow the file input to take up available space */
+    flex-grow: 1;             
 }
 
 .update-button {
-    flex-shrink: 0;            /* Prevent button from shrinking */
-    margin-left: 10px;         /* Optional: Add some spacing between file input and button */
+    flex-shrink: 0;            
+    margin-left: 10px;       
 }
 
 
@@ -518,6 +516,7 @@ table tbody th a:hover {
     font-weight: bold;
 }
 .btn {
+    justify-content: center;
     font-family: century-gothic;
     font-size: 18px;
     height: 3rem;
@@ -535,12 +534,13 @@ table tbody th a:hover {
 }
 
 .btn-destroy {
+    align-items: center;
     background-color: crimson;
-    
     transition: background-color 0.2s ease-in-out;
 }
 
 .btn-destroy:hover {
+    align-items: center;
     background-color: maroon;
     transition: background-color 0.6s ease-in-out
 }
