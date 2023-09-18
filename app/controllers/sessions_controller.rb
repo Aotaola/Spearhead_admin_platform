@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
             flash.now[:notice] = "there was an error creating the session"
             render :new
         end
-
     end
     def destroy
         reset_session
