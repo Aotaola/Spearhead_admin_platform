@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_06_194719) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_19_010114) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,5 +34,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_194719) do
     t.index ["admin_id"], name: "index_articles_on_admin_id"
   end
 
+  create_table "logs", force: :cascade do |t|
+    t.bigint "admin_id", null: false
+    t.bigint "article_id", null: false
+    t.string "action"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_logs_on_admin_id"
+    t.index ["article_id"], name: "index_logs_on_article_id"
+  end
+
   add_foreign_key "articles", "admins"
+  add_foreign_key "logs", "admins"
+  add_foreign_key "logs", "articles"
 end

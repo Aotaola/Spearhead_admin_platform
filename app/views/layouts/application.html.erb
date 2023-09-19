@@ -16,6 +16,9 @@
         <br/>
         <button><%= link_to "Sign in", login_path, class: 'btn-link' %></button>
         <br/>
+        <% if current_admin.present? %>
+          <button><%= link_to "Logs", logs_path, class: 'btn-link' %></button>
+        <%end%>
     
       </div>
 
