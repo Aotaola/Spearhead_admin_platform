@@ -1,9 +1,15 @@
 class Article < ApplicationRecord
   belongs_to :admin
+  has_many :logs
+
 
   mount_uploader :photo, ImageUploader
 
-  #attr_accessor :admin_id
+  #after_create :create_log
+
+  def create_log
+    Log.create!(article_id: self.id, admin_id: self.admin_id)
+  end
 
   def self.ransackable_attributes(auth_object = nil)
       ["title"]

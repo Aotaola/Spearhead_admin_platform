@@ -1,10 +1,6 @@
-
 <table>
     <thead>
         <tr>
-            <th>
-                Admin 
-            </th>
             <th>
                 Article
             </th>
@@ -12,28 +8,32 @@
                 Action
             </th>
             <th>
+                Admin 
+            </th>
+            <th>
                 Timestamp
             </th>
         <tr>
     </thead>
+<% @logs.each do |log|%>
+<% admin = log.admin %>
+<% article = log.article %>
     <tbody>
         <tr>
-            <th>
-                alejandro
-                <%# <%= @admin.name %> %>
+            <th>    
+                
+                <%= link_to article.title, article_path(article) %>
             </th>
             <th>
-                heartburn
-                <%# <%= @article.title %> %>
+                <%= log.action  %>
             </th>
             <th>
-                edit
-                <%= 'action string' %>
+                <%= admin.name %>
             </th>
             <th>
-                09/18/2023
-                <%= 'timestamp' %>
+                <%= log.created_at %>
             </th>
         </tr>
     </tbody>
+<%end%>
 </table>

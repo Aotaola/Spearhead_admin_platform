@@ -38,6 +38,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_010114) do
     t.bigint "admin_id", null: false
     t.bigint "article_id", null: false
     t.string "action"
+    t.string "article_title"
+    t.string "admin_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["admin_id"], name: "index_logs_on_admin_id"
