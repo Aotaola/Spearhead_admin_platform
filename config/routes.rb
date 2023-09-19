@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :logs
   resources :articles
   resources :admins
   namespace :api do

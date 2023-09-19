@@ -9,7 +9,6 @@ class AdminsController < ApplicationController
         @admin = Admin.new
     end
     def create
-
         @admin = Admin.new(admin_params)
             if @admin.save
                 redirect_to @admin, notice: "your admin profile was successfully created"
@@ -17,7 +16,6 @@ class AdminsController < ApplicationController
                 render_errors (@admin)
                 render :new
             end
-
     end
     def edit
 
