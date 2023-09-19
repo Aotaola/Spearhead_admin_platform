@@ -35,8 +35,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_010114) do
   end
 
   create_table "logs", force: :cascade do |t|
-    t.bigint "admin_id", null: false
-    t.bigint "article_id", null: false
+    t.bigint "admin_id"
+    t.bigint "article_id"
     t.string "action"
     t.string "article_title"
     t.string "admin_name"
@@ -47,6 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_010114) do
   end
 
   add_foreign_key "articles", "admins"
-  add_foreign_key "logs", "admins"
-  add_foreign_key "logs", "articles"
+  add_foreign_key "logs", "admins", on_delete: :nullify
+  add_foreign_key "logs", "articles", on_delete: :nullify
 end

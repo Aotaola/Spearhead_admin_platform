@@ -7,9 +7,9 @@ class Article < ApplicationRecord
 
   #after_create :create_log
 
-  def create_log
-    Log.create!(article_id: self.id, admin_id: self.admin_id)
-  end
+  # def create_log
+  #   Log.create!(article_id: self.id, admin_id: self.admin_id)
+  # end
 
   def self.ransackable_attributes(auth_object = nil)
       ["title"]

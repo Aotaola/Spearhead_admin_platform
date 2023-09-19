@@ -18,11 +18,16 @@
 <% @logs.each do |log|%>
 <% admin = log.admin %>
 <% article = log.article %>
+<% article_title = log.article_title %>
     <tbody>
         <tr>
             <th>    
-                
+            <% if article.present? %>
                 <%= link_to article.title, article_path(article) %>
+                <% else %>
+                    <%= article_title %> 
+            <% end %>
+
             </th>
             <th>
                 <%= log.action  %>
