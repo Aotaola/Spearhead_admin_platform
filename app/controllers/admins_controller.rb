@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
     before_action :set_admin, only: [:show, :edit, :update, :destroy ]
 
     def show
-
+        @articles = @admin.articles.paginate(page: params[:page], per_page: 6)
     end
     def new
         @admin = Admin.new
@@ -37,10 +37,12 @@ class AdminsController < ApplicationController
     end
 
     private 
+
     def set_admin
         @admin = Admin.find(params[:id])
     end
     def admin_params
         params.require(:admin).permit(:name, :email, :password, :photo)
     end
+
 end

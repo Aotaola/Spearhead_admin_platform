@@ -5,7 +5,7 @@ class LogsController < ApplicationController
     end
 
     def index
-        @logs = Log.all
+        @logs = Log.paginate(page: params[:page], per_page: 13)
     end
 
 end
