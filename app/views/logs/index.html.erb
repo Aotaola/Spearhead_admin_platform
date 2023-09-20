@@ -16,7 +16,7 @@
         <tr>
     </thead>
 <% @logs.each do |log|%>
-<% admin = log.admin %>
+<% admin_name = log.admin_name %>
 <% article = log.article %>
 <% article_title = log.article_title %>
     <tbody>
@@ -33,12 +33,22 @@
                 <%= log.action  %>
             </th>
             <th>
-                <%= admin.name %>
+                <%= admin_name %>
             </th>
             <th>
                 <%= log.created_at %>
             </th>
         </tr>
-    </tbody>
 <%end%>
+    </tbody>
 </table>
+<div>
+<%= will_paginate @logs, 
+    class: 'pagination', 
+    previous_label: 'Previous', 
+    next_label: 'Next', 
+    inner_window: 5, 
+    outer_window: 1,  
+    page_links: true, 
+    params: { controller: 'logs', action: 'index' } %>
+</div> 

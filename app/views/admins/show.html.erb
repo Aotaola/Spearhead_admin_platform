@@ -1,10 +1,33 @@
-<%# <div class = 'main-container'> %>
-    <%# <div class='container'> %>
-        <div class='profile-container'>
-            <h2  class='profile-name'><%= @admin.name%></h2>
-            <div class= 'profile-photo'><%= image_tag(@admin.photo.url) if @admin.photo? %></div>
-            <button><%= link_to 'Edit Profile', edit_admin_path, method: :get, class: 'btn-link' %></button>
-        </div>
-    <%# </div> %>
-<%# </div> %>
+
+<div>
+    <h2  class='profile-name'><%= @admin.name%></h2>
+    <table>
+        <thead>
+            <tr>
+              <th>Title</th>
+              <th> Description </th>
+            </tr>
+        </thead>
+        <tbody>
+    <% @articles.each do |article| %>
+            <tr>
+                <th> 
+                    <%=link_to article.title.truncate(100), article_path(article), method: :get %>
+                </th>
+                <th> 
+                    <%= article.description.truncate(100) %>
+                </th>
+            </tr>
+        </tbody>
+    <%end %>
+    </table>
+    <div>
+    <div class= 'profile-photo'><%= image_tag(@admin.photo.url) if @admin.photo? %> 
+     </div>
+    <button><%= link_to 'edit profile', edit_admin_path, method: :get, class: 'btn-link' %></button>
+    </div>
+</div>
+
+
+
 
