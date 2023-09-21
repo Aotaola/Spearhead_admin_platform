@@ -95,7 +95,7 @@
  }
  .button-container {
     height: 42rem;
-    width: 76rem;  /* This makes the button container stretch across the entire width of its parent container */
+    width: 76rem;  
     display: inline-block;  
     flex-direction: column;  
 }
@@ -151,7 +151,7 @@ button:active {
     transition-delay: .05s ease;
     
 }
- .site-header:hover {
+.site-header:hover {
     letter-spacing: 4.4px;
     font-weight: 250;
     color: crimson;
@@ -165,8 +165,8 @@ button:active {
     top: 8%;
     transition-duration: .7s ;
     box-shadow: 0px 5px 20px aliceblue;
- }
-/* Login container styling */
+}
+
 .login-container {
     padding: 20px 40px;
 }
@@ -178,14 +178,14 @@ button:active {
     flex-direction: column;
 }
 
-/* Label Styling */
+
 .login-container label {
     margin-bottom: 8px;
     color: midnightblue;
     font-weight: bold;
 }
 
-/* Input fields styling */
+
 .login-container input[type="email"],
 .login-container input[type="password"] {
     width: 100%;
@@ -204,7 +204,7 @@ button:active {
     outline: none;
 }
 
-/* Login button styling */
+
 .login-container input[type="submit"] {
     width: 20%;
     background-color: crimson;
@@ -221,7 +221,7 @@ button:active {
     background-color: midnightblue;
 }
 
-/* Signup link styling */
+
 .login-container a {
     color: crimson;
     text-decoration: none;
@@ -233,7 +233,7 @@ button:active {
     color: midnightblue;
 }
 
-/* Signup container styling */
+
 .signup-container {
     display: inline-block;
     justify-content: center;
@@ -259,14 +259,14 @@ button:active {
     flex-direction: column;
 }
 
-/* Label Styling */
+
 .signup-container label {
     margin-bottom: 8px;
     color: midnightblue;
     font-weight: bold;
 }
 
-/* Input fields styling */
+
 .signup-container input[type="text"],
 .signup-container input[type="password"],
 .signup-container input[type="email"]
@@ -289,7 +289,7 @@ button:active {
 }
 
 .signup-container input[type="file"] {
-    padding: 8px 0;  /* reduce padding for file input */
+    padding: 8px 0;  
     width: 35%;
     color:midnightblue;
     background-color: aliceblue;
@@ -331,7 +331,7 @@ button:active {
 .profile-photo img {
     width: 80%;
     height: 80%;
-    object-fit: cover; /* This ensures that the image covers the div without being stretched or squeezed */
+    object-fit: cover; 
 }
 .profile-items {
     display: flex;
@@ -414,8 +414,8 @@ button:active {
 .file-and-update {
     display: flex;           
     align-items: center;     
-    justify-content: space-between; /* Give some space between the two inner divs */
-    gap: 10px;                 /* Space between flex items (in case it's supported in your browser version) */
+    justify-content: space-between; 
+    gap: 10px;                 
 }
 
 .file-input {
@@ -428,34 +428,34 @@ button:active {
 }
 
 
-/* Main table styling */
+
 table {
     width: 100%;
     border-collapse: collapse; 
     margin: 20px 0;
 }
 
-/* Table headers styling */
+
 table thead th {
-    background-color: #f8f9fa; /* Light gray from Bootstrap for headers */
+    background-color: #f8f9fa; 
     padding: 12px 15px;
-    border: 1px solid #dee2e6; /* Border color taken from Bootstrap */
+    border: 1px solid #dee2e6; 
     text-align: left;
     font-weight: bold;
-    color: steelblue; /* Dark gray color for text */
+    color: steelblue; 
 }
 
-/* Table body rows and cells styling */
+
 table tbody tr {
-    border-bottom: 1px solid #dee2e6; /* Border for the rows */
+    border-bottom: 1px solid #dee2e6; 
 }
 
 table tbody tr:nth-child(odd) {
-    background-color: #f8f9fa; /* Light gray for odd rows to achieve striping */
+    background-color: #f8f9fa; 
 }
 
 table tbody tr:nth-child(even) {
-    background-color: #ffffff; /* White for even rows */
+    background-color: #ffffff; 
 }
 
 table tbody th,
@@ -497,20 +497,41 @@ table tbody th a:hover {
 }
 
 .article-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 30px;
     color: #333;
 }
 
-.article-image img {
-    max-width: 60%;
-    height: auto;
-    margin-bottom: 30px;
+.article-contents img {
+    justify-content: center;
+    float: center;
+    width: 400px;
+    height: fit-content;
+    margin: 20px; 
     border-radius: 5px;
-    
+
 }
 
+.article-contents::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.article-contents p {
+    display: inline-flexbox;
+    font-family: century;
+}
+
+.article-contents {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2%
+}
 .article-author {
     font-size: 0.9rem;
     color: steelblue;
@@ -520,11 +541,20 @@ table tbody th a:hover {
 .article-author span {
     font-weight: bold;
 }
+.article-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: none;
+}
 .btn {
     justify-content: center;
+    align-items: center;
     font-family: century-gothic;
     font-size: 18px;
-    height: 3rem;
+    height: 4rem;
     color: lightsteelblue;
     text-decoration: none;
     
@@ -535,9 +565,11 @@ table tbody th a:hover {
     padding: 0.8rem;
     font-size: 20px;
     border-radius: 1.4rem;
-    margin-top: 10%;
-    width: 3rem;
+    /* margin-top: 10%; */
+    height: 2rem;
+    width: 6rem;
     transition: background-color 0.2s ease-in-out;
+    text-decoration: none;
 }
 
 .btn-edit:hover {

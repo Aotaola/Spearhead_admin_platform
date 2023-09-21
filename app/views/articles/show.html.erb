@@ -1,28 +1,26 @@
 <%# <div class = 'container'> %>
-    <div class="article-container">
+    
+<div class="article-body">
         <h1 class="article-title"><%= @article.title %></h1>
         <h3 class="article-description"><%= @article.description %></h3>
-
-        <div class="article-body">
+        <div class = 'article-contents'>
             <% if @article.photo? %>
-                <div class="article-image">
                     <%= image_tag(@article.photo.url) %>
-                </div>
             <% end %>
-            <%= @article.body %>
+            <p><%= @article.body %></p>
         </div>
-        
-        
         <div class="article-author">
             <p>This article was written by <span><%= @admin.name %></span></p>
         </div>
-        
-        <div class="article-actions" >
+
+    <div class="article-actions" >
         <% if current_admin.present? %>
-            <button><%= link_to 'Edit', edit_article_path(@article.id), method: :get, class: "btn btn-link" %></button>
+            <%= link_to 'edit article', edit_article_path(@article.id), method: :get, class: "btn btn-edit" %>
+            
             <%= button_to 'Destroy', article_path(@article.id), method: :delete, class: "btn btn-destroy" %>
         <%end%>
-        </div>
-        <br/>
-    </div>
-<%# </div> %>
+     </div>
+</div>
+
+
+
