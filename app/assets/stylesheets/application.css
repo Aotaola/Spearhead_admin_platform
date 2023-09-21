@@ -323,8 +323,8 @@ button:active {
 .profile-photo {
     display: flex;
     justify-content: center;
-    width: 200px; 
-    height: 200px;
+    width: 150px; 
+    height: 150px;
     border-radius: 40%; 
     overflow: hidden;
 }
@@ -333,13 +333,17 @@ button:active {
     height: 80%;
     object-fit: cover; /* This ensures that the image covers the div without being stretched or squeezed */
 }
+.profile-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+}
 .profile-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
-    width: 50%;
-    height: 100%;
-    margin: 20px auto; 
+    height: 98%;
     border-radius: 8px;
 }
 /* New Article Container */
@@ -462,7 +466,7 @@ table tbody td {
 }
 
 
-table tbody th a {
+table tbody tr a {
     color: royalblue; 
     text-decoration: none;
     transition: color 0.3s;
@@ -523,15 +527,22 @@ table tbody th a:hover {
     height: 3rem;
     color: lightsteelblue;
     text-decoration: none;
+    
 }
 .btn-edit {
-    background-color: midnightblue;
+    background-color: lightsteelblue;
     color: aliceblue;
+    padding: 0.8rem;
+    font-size: 20px;
+    border-radius: 1.4rem;
+    margin-top: 10%;
+    width: 3rem;
     transition: background-color 0.2s ease-in-out;
 }
 
 .btn-edit:hover {
-    background-color: lightsteelblue;
+    background-color: midnightblue;
+    
 }
 
 .btn-destroy {

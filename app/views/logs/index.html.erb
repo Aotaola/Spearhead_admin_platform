@@ -1,54 +1,57 @@
 <table>
     <thead>
         <tr>
-            <th>
-                Article
-            </th>
-            <th>
-                Action
-            </th>
-            <th>
-                Admin 
-            </th>
-            <th>
-                Timestamp
-            </th>
-        <tr>
-    </thead>
-<% @logs.each do |log|%>
-<% admin_name = log.admin_name %>
-<% article = log.article %>
-<% article_title = log.article_title %>
-    <tbody>
-        <tr>
-            <th>    
-            <% if article.present? %>
-                <%= link_to article.title, article_path(article) %>
-                <% else %>
-                    <%= article_title %> 
-            <% end %>
-
-            </th>
-            <th>
-                <%= log.action  %>
-            </th>
-            <th>
-                <%= admin_name %>
-            </th>
-            <th>
-                <%= log.created_at %>
-            </th>
+            <th>Article</th>
+            <th>Action</th>
+            <th>Admin</th>
+            <th>Timestamp</th>
         </tr>
-<%end%>
+    </thead>
+    <tbody>
+        <% @logs.each do |log| %>
+            <% admin_name = log.admin_name %>
+            <% article = log.article %>
+            <% article_title = log.article_title %>
+            <tr>
+                <td>    
+                    <% if article.present? %>
+                        <%= link_to article.title, article_path(article) %>
+                    <% else %>
+                        <%= article_title %> 
+                    <% end %>
+                </td>
+                <td>
+                    <%= log.action %>
+                </td>
+                <td>
+                    <%= admin_name %>
+                </td>
+                <td>
+                    <%= log.created_at %>
+                </td>
+            </tr>
+        <% end %>
+
+        <% if @logs.size < 13 %>
+            <% (13 - @logs.size).times do %>
+                <tr>
+                    <td>. </td>
+                    <td>. </td>
+                    <td>. </td>
+                    <td>. </td>
+                </tr>
+            <% end %>
+        <% end %>
     </tbody>
 </table>
+
 <div>
-<%= will_paginate @logs, 
-    class: 'pagination', 
-    previous_label: 'Previous', 
-    next_label: 'Next', 
-    inner_window: 5, 
-    outer_window: 1,  
-    page_links: true, 
-    params: { controller: 'logs', action: 'index' } %>
-</div> 
+    <%= will_paginate @logs,
+    class: 'pagination',
+    previous_label: 'Previous',
+    next_label: 'Next',
+    inner_window: '5',
+    outer_window: '1',
+    page_links: true
+    %>
+</div>

@@ -1,30 +1,53 @@
 
-<div>
-    <h2  class='profile-name'><%= @admin.name%></h2>
-    <table>
-        <thead>
+<div class="profile-container">
+    <div class = "profile-items">
+        <div class= 'profile-photo'><%= image_tag(@admin.photo.url) if @admin.photo? %> </div>
+        <h2  class='profile-name'><%= @admin.name%></h2>
+    </div>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @articles.each do |article| %>
             <tr>
-              <th>Title</th>
-              <th> Description </th>
-            </tr>
-        </thead>
-        <tbody>
-    <% @articles.each do |article| %>
-            <tr>
-                <th> 
-                    <%=link_to article.title.truncate(100), article_path(article), method: :get %>
-                </th>
-                <th> 
+                <td>
+                    <%= link_to article.title.truncate(100), article_path(article) %>
+                </td>
+                <td>
                     <%= article.description.truncate(100) %>
-                </th>
+                </td>
             </tr>
-        </tbody>
-    <%end %>
-    </table>
+        <% end %>
+        
+        <% if @articles.size < 6 %>
+            <% (6 - @articles.size).times do %>
+                <tr>
+                    <td>. </td>
+                    <td>. </td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+<div>
+    <%= will_paginate @articles,
+    class: 'pagination',
+    previous_label: 'Previous',
+    next_label: 'Next',
+    inner_window: '5',
+    outer_window: '1',
+    page_links: true,
+    params: {controller: 'admins', action: 'show'}
+    %>
+</div>
+
     <div>
-    <div class= 'profile-photo'><%= image_tag(@admin.photo.url) if @admin.photo? %> 
-     </div>
-    <button><%= link_to 'edit profile', edit_admin_path, method: :get, class: 'btn-link' %></button>
+    <%= link_to 'edit profile', edit_admin_path, method: :get, class: ' btn btn-edit' %>
     </div>
 </div>
 

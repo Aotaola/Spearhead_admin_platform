@@ -18,26 +18,36 @@
         </div>
       <%end%>
     
-    <table>
-        <thead>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @articles.each do |article| %>
             <tr>
-              <th>Title</th>
-              <th> Description </th>
-            </tr>
-        </thead>
-        <tbody>
-    <% @articles.each do |article| %>
-            <tr>
-                <th> 
-                    <%=link_to article.title.truncate(100), article_path(article), method: :get %>
-                </th>
-                <th> 
+                <td>
+                    <%= link_to article.title.truncate(100), article_path(article) %>
+                </td>
+                <td>
                     <%= article.description.truncate(100) %>
-                </th>
+                </td>
             </tr>
-        </tbody>
-    <%end %>
-    </table>
+        <% end %>
+        
+        <% if @articles.size < 10 %>
+            <% (10 - @articles.size).times do %>
+                <tr>
+                    <td> . </td>
+                    <td> . </td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
       <div>
         <%= will_paginate @articles, 
           class: 'pagination', 
