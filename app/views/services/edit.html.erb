@@ -1,6 +1,7 @@
 <div class='new-article-container'>
     <h3>!!Edit : <%= @service.title %></h3>
-    <%=  form_with model: @service do |f| %>
+    <%= render 'shared/error_messages', object: @service %>
+    <%=  form_with model: @service, data: {turbo: "false"} do |f| %>
 
         <div>
             <%= f.label :title %>

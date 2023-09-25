@@ -30,8 +30,8 @@ class ServicesController < ApplicationController
             Log.create!(admin: current_admin, service: @service, admin_name: current_admin.name, service_title: @service.title, article: nil, article_title: nil, action: "Edited by #{current_admin.name}")
             redirect_to @service, notice: "service was successfully updated"
          else
-            flash[:notice]= "there was an error saving your correction"
             render :edit
+            flash[:notice]= "there was an error saving your correction"
          end
     end
     def destroy

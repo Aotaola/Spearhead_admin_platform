@@ -3,5 +3,5 @@ class Log < ApplicationRecord
   belongs_to :article, optional: true
   belongs_to :service, optional: true
 
-  validates :admin, presence: true
+
 end

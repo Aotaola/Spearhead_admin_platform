@@ -1,6 +1,7 @@
 <div class='new-article-container'>
     <h3>New Article</h3>
-    <%= form_with model: @article do |f|%>
+    <%= render 'shared/error_messages', object: @article %>
+    <%= form_with model: @article, data: { turbo: "false" } do |f|%>
         <div>
             <%= f.text_field :title, placeholder: 'Title'%>
         </div>

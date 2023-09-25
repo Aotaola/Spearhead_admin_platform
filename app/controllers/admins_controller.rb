@@ -13,7 +13,7 @@ class AdminsController < ApplicationController
             if @admin.save
                 redirect_to login_path, notice: "your admin profile was successfully created"
             else
-                render_errors (@admin)
+                flash[:notice]= "there was an error saving your profile"
                 render :new
             end
     end
@@ -25,7 +25,7 @@ class AdminsController < ApplicationController
         if @admin.update(admin_params)
             redirect_to @admin, notice: "your admin profile was successfully updated"
         else
-            render_errors (@admin)
+            flash[:notice]= "there was an error saving your correction"
             render :edit
         end
 

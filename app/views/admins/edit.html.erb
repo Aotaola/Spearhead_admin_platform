@@ -1,6 +1,7 @@
 
 <div class='signup-container'>
-    <%= form_with model: @admin do |f|%>
+<%= render 'shared/error_messages', object: @admin %>
+    <%= form_with model: @admin, data: {turbo: "false"} do |f|%>
         <div>
             <%= f.label :name%>
             <%= f.text_field :name, placeholder: @admin.name%>

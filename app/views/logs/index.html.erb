@@ -17,14 +17,14 @@
             <tr>
                 <td>    
                     <% if article.present? %>
-                        <%= link_to article.title, article_path(article) %>
+                        <%= link_to article.title.truncate(40), article_path(article) %>
                     <% else %>
                         <%= article_title %> 
                     <% end %>
                 </td>
                 <td>
                     <% if service.present? %>
-                        <%= link_to service.title, service_path(service) %>
+                        <%= link_to service.title.truncate(30), service_path(service) %>
                     <% else %>
                         <%= service_title %> 
                     <% end %>
@@ -59,7 +59,7 @@
     previous_label: 'Previous',
     next_label: 'Next',
     inner_window: '5',
-    outer_window: '1',
+    outer_window: '5',
     page_links: true
     %>
 </div>

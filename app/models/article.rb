@@ -2,6 +2,11 @@ class Article < ApplicationRecord
   belongs_to :admin
   has_many :logs
 
+  validates :admin_id, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :body, presence: true
+
 
   mount_uploader :photo, ImageUploader
 

@@ -19,8 +19,8 @@ class ArticlesController < ApplicationController
             Log.create(admin: current_admin, article: @article, admin_name: current_admin.name, article_title: @article.title, service: nil, service_title: nil, action: "Created by  #{current_admin.name}")
             redirect_to @article, notice: "article was successfully created"
          else
-            flash[:alert] = "there was an error creating the article"
             render :new
+            flash[:alert] = "there was an error creating the article"
          end
     end
     def edit
@@ -31,8 +31,8 @@ class ArticlesController < ApplicationController
             Log.create(admin: current_admin, article: @article, admin_name: current_admin.name, article_title: @article.title, service: nil, service_title: nil, action: "Edited by  #{current_admin.name}")
             redirect_to @article, notice: "article was successfully updated"
          else
-            flash[:notice]= "there was an error saving your correction"
             render :edit
+            flash[:notice]= "there was an error saving your correction"
          end
     end
     def destroy

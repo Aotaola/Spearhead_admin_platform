@@ -426,7 +426,27 @@ button:active {
     flex-shrink: 0;            
     margin-left: 10px;       
 }
-
+.service-body {
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 5%;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    border-width: 1px;
+    border-color: lightsteelblue;
+    border-radius: 3rem;
+}
+.service-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding-top: 20%;
+}
 
 
 table {
@@ -473,6 +493,19 @@ table tbody tr a {
     text-align: left;
     display: block;
 }
+.service-title {
+    color: midnightblue;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 10%;
+}
+.service-description{
+    display: flex;
+    justify-content: center;
+    color: crimson;
+    font-size: 1.5rem;
+    margin-bottom: 20%;
+}
 
 table tbody th a:hover {
     color: cornflowerblue; 
@@ -505,12 +538,28 @@ table tbody th a:hover {
     line-height: 1.6;
     color: #333;
 }
-.service-body {
-    position: relative;
-    top: 0;
-    bottom: 0;
-    
-}
+#error_explanation {
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  #error_explanation h2 {
+    color: #a94442;
+  }
+  
+  #error_explanation ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #error_explanation ul li {
+    font-family: century;
+    color: #a94442;
+  }
+  
 .article-contents img {
     justify-content: center;
     float: center;
