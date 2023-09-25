@@ -23,9 +23,10 @@
                 </td>
             </tr>
         <% end %>
-        
-        <% if @articles.size < 6 %>
-            <% (6 - @articles.size).times do %>
+        <% articles_on_current_page = @articles_ordered.size %>
+            <% total_rows_required = 6 %>        
+        <% if articles_on_current_page < total_rows_required && (@articles_ordered.current_page == @articles_ordered.total_pages || @articles_ordered.total_pages == 1) %>
+            <% (total_rows_required - articles_on_current_page).times do %>
                 <tr>
                     <td>. </td>
                     <td>. </td>
