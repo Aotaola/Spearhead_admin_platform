@@ -8,7 +8,8 @@
         </tr>
     </thead>
     <tbody>
-        <% @logs.each do |log| %>
+        <% @logs_ordered = @logs.order(created_at: :desc)%>
+        <% @logs_ordered.each do |log| %>
             <% article = log.article %>
             <% article_title = log.article_title %>
             <% service = log.service %>
@@ -36,9 +37,11 @@
                 </td>
             </tr>
         <% end %>
+        <% logs_on_current_page = @logs_ordered.size %>
+        <% total_rows_required = 13%>
 
-        <% if @logs.size < 13 %>
-            <% (13 - @logs.size).times do %>
+        <% if logs_on_current_page < total_rows_required && (@logs_ordered.current_page == @logs_ordered.total_pages ||@logs_ordered.total_pages == 1) %>
+            <% (total_rows_required - logs_on_current_page).times do %>
                 <tr>
                     <td>. </td>
                     <td>. </td>

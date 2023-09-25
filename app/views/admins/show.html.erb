@@ -12,7 +12,8 @@
         </tr>
     </thead>
     <tbody>
-        <% @articles.each do |article| %>
+        <%@articles_ordered = @articles.order(created_at: :desc)%>
+        <% @articles_ordered.each do |article| %>
             <tr>
                 <td>
                     <%= link_to article.title.truncate(100), article_path(article) %>
