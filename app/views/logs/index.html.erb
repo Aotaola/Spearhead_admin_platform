@@ -2,6 +2,7 @@
     <thead>
         <tr>
             <th>Article</th>
+            <th>Service</th>
             <th>Action</th>
             <th>Admin</th>
             <th>Timestamp</th>
@@ -12,12 +13,21 @@
             <% admin_name = log.admin_name %>
             <% article = log.article %>
             <% article_title = log.article_title %>
+            <% service = log.service %>
+            <% service_title = log.service_title %>
             <tr>
                 <td>    
                     <% if article.present? %>
                         <%= link_to article.title, article_path(article) %>
                     <% else %>
                         <%= article_title %> 
+                    <% end %>
+                </td>
+                <td>
+                    <% if service.present? %>
+                        <%= link_to service.title, service_path(service) %>
+                    <% else %>
+                        <%= service_title %> 
                     <% end %>
                 </td>
                 <td>

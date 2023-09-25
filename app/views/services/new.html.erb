@@ -1,0 +1,19 @@
+<div class='new-article-container'>
+    <h3>New Service</h3>
+    <%= form_with model: @service do |f|%>
+        <div>
+            <%= f.text_field :title, placeholder: 'Title'%>
+        </div>
+        <div>
+            <%= f.text_field :description, placeholder: 'Description'%>
+        </div>
+        <div>
+            <%= f.text_field :url, placeholder: 'url'%>
+        </div>
+        <div class="file-and-update">
+            <div class="update-button">
+            <%= f.submit "submit", method: :post %>
+            </div>
+        </div>
+    <% end %>
+</div>

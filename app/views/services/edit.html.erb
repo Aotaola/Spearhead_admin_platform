@@ -1,0 +1,23 @@
+<div class='new-article-container'>
+    <h3>!!Edit : <%= @service.title %></h3>
+    <%=  form_with model: @service do |f| %>
+
+        <div>
+            <%= f.label :title %>
+            <%= f.text_field :title, placeholder: "title" %>
+        </div>
+        <div>
+            <%= f.label :description %>
+            <%= f.text_field :description, placeholder: "description" %>
+        </div>
+
+        <div>
+            <%= f.label :url %>
+            <%= f.text_area :url, placeholder: "url" %>
+        </div>
+            <div class="update-button">
+                <%= f.submit "Update" %>
+            </div>
+         </div>
+    <% end %>
+</div>

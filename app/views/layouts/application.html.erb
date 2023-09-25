@@ -12,9 +12,11 @@
 
   <body>
       <div class='actual-button-container'>
+        <button><%= link_to "Sign in", login_path, class: 'btn-link' %></button>
+        <br/>
         <button><%= link_to 'Articles', articles_path, class: 'btn-link' %> </button>
         <br/>
-        <button><%= link_to "Sign in", login_path, class: 'btn-link' %></button>
+        <button><%= link_to 'Services', services_path, class: 'btn-link' %> </button>
         <br/>
         <% if current_admin.present? %>
           <button><%= link_to "Logs", logs_path, class: 'btn-link' %></button>
@@ -38,7 +40,10 @@
         <br/>
         <button><%= link_to "Article+", new_article_path, class: 'btn-link'%></button>
         <br/>
-        <%= button_to 'Logout', logout_path, method: :delete, class: 'btn btn-destroy' %>
+        <br/>
+        <button><%=link_to "Services+", new_service_path, class: 'btn-link'%></button>
+        <br/>
+        <%= button_to 'Logout', logout_path, method: :delete, class: 'btn btn-destroy'%>
         <% end %>
       </div>
   </body>

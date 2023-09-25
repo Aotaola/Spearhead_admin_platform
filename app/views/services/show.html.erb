@@ -1,0 +1,13 @@
+<div class="service-body">
+        <h1 class="article-title"><%= @service.title %></h1>
+        <h3 class="article-description"><%= @service.description %></h3>
+        <a><%= @service.url %></a>
+
+    <div class="article-actions" >
+        <% if current_admin.present? %>
+            <%= link_to 'edit service', edit_service_path(@service.id), method: :get, class: "btn btn-edit" %>
+            
+            <%= button_to 'Destroy', service_path(@service.id), method: :delete, class: "btn btn-destroy" %>
+        <%end%>
+     </div>
+</div>
