@@ -11,7 +11,7 @@ class AdminsController < ApplicationController
     def create
         @admin = Admin.new(admin_params)
             if @admin.save
-                redirect_to @admin, notice: "your admin profile was successfully created"
+                redirect_to login_path, notice: "your admin profile was successfully created"
             else
                 render_errors (@admin)
                 render :new
