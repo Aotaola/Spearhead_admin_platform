@@ -4,13 +4,11 @@
             <th>Article</th>
             <th>Service</th>
             <th>Action</th>
-            <th>Admin</th>
             <th>Timestamp</th>
         </tr>
     </thead>
     <tbody>
         <% @logs.each do |log| %>
-            <% admin_name = log.admin_name %>
             <% article = log.article %>
             <% article_title = log.article_title %>
             <% service = log.service %>
@@ -32,9 +30,6 @@
                 </td>
                 <td>
                     <%= log.action %>
-                </td>
-                <td>
-                    <%= admin_name %>
                 </td>
                 <td>
                     <%= log.created_at %>

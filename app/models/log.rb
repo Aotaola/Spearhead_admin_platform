@@ -1,7 +1,7 @@
 class Log < ApplicationRecord
   belongs_to :admin
-  belongs_to :article
-  belongs_to :service
+  belongs_to :article, optional: true
+  belongs_to :service, optional: true
 
   validates :admin, presence: true
 end

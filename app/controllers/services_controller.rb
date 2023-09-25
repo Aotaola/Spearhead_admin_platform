@@ -15,7 +15,7 @@ class ServicesController < ApplicationController
     def create
         @service = Service.new(service_params)
         if @service.save
-            Log.create(admin: current_admin, service: @service, admin_name: current_admin.name, service_title: @service.title, article: nil, article_title: nil, action: 'Created by')
+            Log.create(admin: current_admin, service: @service, admin_name: current_admin.name, service_title: @service.title, article: nil, article_title: nil, action: "Created by #{current_admin.name}")
             redirect_to @service, notice: "service was successfully created"
          else
             flash[:alert] = "there was an error creating the service"
@@ -27,7 +27,7 @@ class ServicesController < ApplicationController
     end
     def update
         if @service.update(service_params)
-            Log.create(admin: current_admin, service: @service, admin_name: current_admin.name, service_title: @service.title, article: nil, article_title: nil, action: 'Edited by')
+            Log.create!(admin: current_admin, service: @service, admin_name: current_admin.name, service_title: @service.title, article: nil, article_title: nil, action: "Edited by #{current_admin.name}")
             redirect_to @service, notice: "service was successfully updated"
          else
             flash[:notice]= "there was an error saving your correction"
@@ -35,7 +35,7 @@ class ServicesController < ApplicationController
          end
     end
     def destroy
-        Log.create(admin: current_admin, service: @service, admin_name: current_admin.name, service_title: @service.title, article: @article, article_title: @article, action:, action: 'Destroyed')
+        Log.create(admin: current_admin, service: @service, admin_name: current_admin.name, service_title: @service.title, article: @article, article_title: @article, action:, action: "Destroyed by #{current_admin.name}")
         @service.destroy
         redirect_to services_path, notice: "service was successfully destroyed"
     end
