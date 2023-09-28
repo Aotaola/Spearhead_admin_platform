@@ -448,6 +448,14 @@ button:active {
     padding-top: 20%;
 }
 
+.service-url {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-decoration: none;
+}
 
 table {
     width: 100%;

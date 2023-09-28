@@ -1,7 +1,7 @@
 <div class="service-body">
         <h1 class="service-title"><%= @service.title %></h1>
         <h3 class="service-description"><%= @service.description %></h3>
-        <%=link_to @service.url %>
+        <h4 class="service-url"><%=link_to @service.url %></h4>
 
     <div class="service-actions" >
         <% if current_admin.present? %>
