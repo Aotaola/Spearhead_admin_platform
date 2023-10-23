@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    background-color: crimson;
+    background-color: lightseagreen;
     height: 100%;
     width: 100%;
     padding-bottom: 3%;
@@ -127,7 +127,7 @@ button:active {
     justify-content: space-evenly;
     padding: 1rem 2rem; 
     border-radius: 3.75rem;
-    border-color: crimson;
+    border-color: mediumseagreen;
     box-sizing: border-box;  
     box-shadow: 0px 5px 40px white; 
     text-align: center;  
@@ -147,14 +147,14 @@ button:active {
     font-size: 20px;
     font-weight: 400;
     text-decoration: none;
-    color: crimson;
+    color: mediumseagreen;
     transition-delay: .05s ease;
     
 }
 .site-header:hover {
     letter-spacing: 4.4px;
     font-weight: 250;
-    color: crimson;
+    color: mediumseagreen; 
     font: 'century-gothic';
     display: center;
     background-color: lavender;
@@ -200,14 +200,14 @@ button:active {
 
 .login-container input[type="email"]:focus,
 .login-container input[type="password"]:focus {
-    border-color: crimson;
+    border-color: mediumseagreen;
     outline: none;
 }
 
 
 .login-container input[type="submit"] {
     width: 20%;
-    background-color: crimson;
+    background-color: mediumseagreen;
     color: aliceblue;
     border: none;
     padding: 12px 0;
@@ -223,7 +223,7 @@ button:active {
 
 
 .login-container a {
-    color: crimson;
+    color: mediumseagreen;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -284,7 +284,7 @@ button:active {
 .signup-container input[type="text"]:focus,
 .signup-container input[type="password"]:focus,
 .signup-container input[type="email"]:focus {
-    border-color: crimson;
+    border-color: mediumseagreen;
     outline: none;
 }
 
@@ -298,7 +298,7 @@ button:active {
 /* Signup button styling */
 .signup-container input[type="submit"] {
     width: 30%;
-    background-color: crimson;
+    background-color: mediumseagreen;
     color: aliceblue;
     border: none;
     padding: 12px 0;
@@ -357,7 +357,7 @@ button:active {
 }
 
 .new-article-container h3 {
-    color: crimson;
+    color: mediumseagreen;
     font-weight: bold;
     text-align: center;
     margin-bottom: 25px;
@@ -393,11 +393,11 @@ button:active {
 .new-article-container input[type="text"]:focus,
 .new-article-container textarea:focus,
 .new-article-container input[type="file"]:focus {
-    border-color: crimson;
+    border-color: mediumseagreen;
     outline: none;
 }
 .new-article-container input[type="submit"] {
-    background-color: crimson;
+    background-color: mediumseagreen;
     color: aliceblue;
     border: none;
     padding: 12px 25px;
@@ -510,7 +510,7 @@ table tbody tr a {
 .service-description{
     display: flex;
     justify-content: center;
-    color: crimson;
+    color: mediumseagreen;
     font-size: 1.5rem;
     margin-bottom: 20%;
 }
@@ -532,7 +532,7 @@ table tbody th a:hover {
 }
 
 .article-description {
-    color: crimson;
+    color: mediumseagreen;
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
@@ -641,7 +641,7 @@ table tbody th a:hover {
 
 .btn-destroy {
     align-items: center;
-    background-color: crimson;
+    background-color: mediumseagreen;
     transition: background-color 0.2s ease-in-out;
 }
 
