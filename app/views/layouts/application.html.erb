@@ -11,21 +11,38 @@
   </head>
 
   <body>
-      <div class='actual-button-container'>
-        <button><%= link_to "Sign in", login_path, class: 'btn-link' %></button>
-        <br/>
-        <button><%= link_to 'Articles', articles_path, class: 'btn-link' %> </button>
-        <br/>
-        <button><%= link_to 'Services', services_path, class: 'btn-link' %> </button>
-        <br/>
-        <% if current_admin.present? %>
-          <button><%= link_to "Logs", logs_path, class: 'btn-link' %></button>
-        <%end%>
-    
-      </div>
 
     <div class='main-container'>
-    <h1><%= link_to "Spear Health", root_path, class:'site-header' %> </h1>
+     <%# link to home %>
+    <h1><%= link_to "Spear Health", root_path, class:'site-header' %> </h1> 
+      <div class='navBar'>
+        <div class='actual-button-container'>
+          <%# link to archives (articles, patientprofiles, servivces, logs) %>
+          <button><%= link_to "Sign in", login_path, class: 'btn-link' %></button>
+          <br/>
+          <button><%= link_to 'Articles', articles_path, class: 'btn-link' %> </button>
+          <br/>
+          <button><%= link_to 'Services', services_path, class: 'btn-link' %> </button>
+          <br/>
+          <% if current_admin.present? %>
+            <button><%= link_to "Logs", logs_path, class: 'btn-link' %></button>
+          <%end%>
+        </div>
+
+        <div class='actual-button-container-b'>
+        <%# link to creating new articles, services, link to admin profile %>
+          <% if current_admin.present? %>
+          <button><%= link_to "Profile", admin_path(@current_admin), method: :get,  class: 'btn-link'%></button>
+          <br/>
+          <button><%= link_to "Article+", new_article_path, class: 'btn-link'%></button>
+          <br/>
+          <br/>
+          <button><%=link_to "Service+", new_service_path, class: 'btn-link'%></button>
+          <br/>
+          <%= button_to 'Logout', logout_path, method: :delete, data: { turbo: "false", confirm: 'Are you sure you want to sign off?' }, class: 'btn btn-destroy'%>
+          <% end %>
+        </div>
+      </div>
     <div class='container'>
       <div class='button-container' >
         <%#  the content from all the views will render here %>
@@ -34,18 +51,6 @@
       </div>
     </div>
     </div>
-      <div class='actual-button-container-b'>
-        <% if current_admin.present? %>
-        <button><%= link_to "Profile", admin_path(@current_admin), method: :get,  class: 'btn-link'%></button>
-        <br/>
-        <button><%= link_to "Article+", new_article_path, class: 'btn-link'%></button>
-        <br/>
-        <br/>
-        <button><%=link_to "Service+", new_service_path, class: 'btn-link'%></button>
-        <br/>
-        <%= button_to 'Logout', logout_path, method: :delete, data: { turbo: "false", confirm: 'Are you sure you want to sign off?' }, class: 'btn btn-destroy'%>
-        <% end %>
-      </div>
   </body>
 
 </html>

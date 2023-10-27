@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :invoices
+  resources :patients
   resources :services
   resources :logs
   resources :articles
