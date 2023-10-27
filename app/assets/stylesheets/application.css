@@ -636,18 +636,19 @@ table tbody th a:hover {
 
 .btn-edit:hover {
     background-color: midnightblue;
-    
 }
 
 .btn-destroy {
+    color: rgb(0, 66, 32);
     align-items: center;
-    background-color: mediumseagreen;
+    background-color: mediumgreen;
     transition: background-color 0.2s ease-in-out;
 }
 
 .btn-destroy:hover {
+    color: lightseagreen;
     align-items: center;
-    background-color: maroon;
+    background-color: rgb(0, 30, 0);
     transition: background-color 0.6s ease-in-out
 }
 
