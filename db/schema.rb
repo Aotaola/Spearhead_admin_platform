@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_25_011530) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_27_193443) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,6 +34,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_011530) do
     t.index ["admin_id"], name: "index_articles_on_admin_id"
   end
 
+  create_table "invoices", force: :cascade do |t|
+    t.bigint "patient_id"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_invoices_on_patient_id"
+  end
+
   create_table "logs", force: :cascade do |t|
     t.bigint "admin_id"
     t.bigint "article_id"
@@ -49,6 +57,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_011530) do
     t.index ["service_id"], name: "index_logs_on_service_id"
   end
 
+  create_table "patients", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "insurance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -58,6 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_011530) do
   end
 
   add_foreign_key "articles", "admins"
+  add_foreign_key "invoices", "patients", on_delete: :nullify
   add_foreign_key "logs", "admins", on_delete: :nullify
   add_foreign_key "logs", "articles", on_delete: :nullify
   add_foreign_key "logs", "services", on_delete: :nullify

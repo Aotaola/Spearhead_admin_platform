@@ -1,7 +1,7 @@
 class CreateInvoices < ActiveRecord::Migration[7.0]
   def change
     create_table :invoices do |t|
-      t.belongs_to :patient, null: false, foreign_key: true
+      t.references :patient, foreign_key: { on_delete: :nullify }
       t.string :description
 
       t.timestamps

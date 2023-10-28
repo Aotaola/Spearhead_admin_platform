@@ -13,8 +13,6 @@
   <body>
 
     <div class='main-container'>
-     <%# link to home %>
-    <h1><%= link_to "Spear Health", root_path, class:'site-header' %> </h1> 
       <div class='navBar'>
         <div class='actual-button-container'>
           <%# link to archives (articles, patientprofiles, servivces, logs) %>
@@ -29,10 +27,12 @@
           <%end%>
         </div>
 
+     <%# link to home %>
+    <h1><%= link_to "Spear Health", root_path, class:'site-header' %> </h1> 
         <div class='actual-button-container-b'>
         <%# link to creating new articles, services, link to admin profile %>
           <% if current_admin.present? %>
-          <button><%= link_to "Profile", admin_path(@current_admin), method: :get,  class: 'btn-link'%></button>
+          <button class="button"><%= link_to "Profile", admin_path(@current_admin), method: :get,  class: 'btn-link'%></button>
           <br/>
           <button><%= link_to "Article+", new_article_path, class: 'btn-link'%></button>
           <br/>
