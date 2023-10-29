@@ -1,6 +1,9 @@
-<div class='button-container'>
-    <%= image_tag('SpearHealthLogoColor2', class: 'container-image') %>
-<h2 class="mobile-app-landing"> Mobile App Administrator</h2>
 
-</div>
+    <%= image_tag('SpearHealthLogoColor2', class: 'container-image') %>
+<% if current_admin.present? %>
+    <h2 class="mobile-app-landing">Welcome to</h2>
+<%end%>
+<h2 class="mobile-app-landing">The Mobile App Administrator</h2>
+
+
 
