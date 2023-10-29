@@ -127,6 +127,8 @@
 
 button {
     justify-content: center;
+    align-items: center;
+
     padding: 1rem 2rem;
     height: 15%;
     border: none;
