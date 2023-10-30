@@ -1,0 +1,65 @@
+<div>
+<%# <% render 'shared/error_messages', object: @patients %> 
+    <div class="search-bar">
+        <%= search_form_for(@query) do |f| %>
+          <%= f.search_field :name_cont_any, placeholder: "Search...", class: 'search-bar-input'%>
+          <%= f.submit "Search!"%>
+        <% end %>
+    </div>
+      <% if @pat.present? %>
+        <div class="search-bar-results"> 
+        <h4><%= pluralize(@pat.count, 'Result')%></h4> 
+
+          <% @pat.order(:name).each do |patient|%>
+          <p>
+            <%= link_to patient.name, patient_path(patient) %>
+          </p>
+          <br/>
+          <%end%>
+        </div>
+      <%end%>
+    
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @patients_ordered = @patients.order(created_at: :desc)%>
+        <% @patients_ordered.each do |patient| %>
+            <tr>
+                <td>
+                    <%= link_to patient.name.truncate(100), patient_path(patient) %>
+                </td>
+                <td>
+                    <%= patient.email.truncate(100) %>
+                </td>
+            </tr>
+        <% end %>
+        <% patients_on_current_page = @patients_ordered.size %>
+        <% total_rows_required = 10 %>
+        
+        <% if patients_on_current_page < total_rows_required && (@patients_ordered.current_page == @patients_ordered.total_pages || @patients_ordered.total_pages == 1) %>
+            <% (total_rows_required - patients_on_current_page).times do %>
+                <tr>
+                    <td> . </td>
+                    <td> . </td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+</div>
+      <div>
+        <%= will_paginate @patients, 
+          class: 'pagination', 
+            previous_label: 'Previous', 
+            next_label: 'Next', 
+            inner_window: 5, 
+            outer_window: 5,  
+            page_links: true, 
+            params: { controller: 'patients', action: 'index' } %>
+      </div>

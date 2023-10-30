@@ -1,19 +1,21 @@
 class PatientsController < ApplicationController
-    before_action :set_article, only [:edit, :update, :destroy, :show]
+    before_action :set_patient, only: [:edit, :update, :destroy, :show]
 
     def index
-        @patients = Patient.all
-        render @patients
+        @query = Patient.ransack(params[:q])
+        @pat = params[:q].blank? ? Patient.none : @query.result(distinct: true)
+        @patients = Patient.paginate(page: params[:page], per_page: 10)
     end
     def show
-         @invoices = @patient.invoices
+        @invoices = @patient.invoices.paginate(page: params[:page], per_page: 6)
+
     end
     def edit
         
     end 
     def update
         if @patient.update(patient_params)
-            redirect_to @article, notice: "article was successfully updated"
+            redirect_to @patient, notice: "patient was successfully updated"
          else
             render :edit
             flash[:notice]= "there was an error saving your edit. Please try again"

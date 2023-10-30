@@ -1,0 +1,47 @@
+<div class="profile-container">
+    <div class = "profile-items">
+        <h2  class='profile-name'><%= @patient.name%></h2>
+    </div>
+<table >
+    <thead>
+        <tr>
+            <th>Invoice Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%@invoices_ordered = @invoices.order(created_at: :desc)%>
+        <% @invoices_ordered.each do |invoice| %>
+            <tr>
+                <td>
+                    <%= link_to invoice.description.truncate(100, invoice_path(invoice)) %>
+                </td>
+            </tr>
+        <% end %>
+        <% invoices_on_current_page = @invoices_ordered.size %>
+            <% total_rows_required = 6 %>        
+        <% if invoices_on_current_page < total_rows_required && (@invoices_ordered.current_page == @invoices_ordered.total_pages || @invoices_ordered.total_pages == 1) %>
+            <% (total_rows_required - invoices_on_current_page).times do %>
+                <tr>
+                    <td>. </td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+
+<div>
+    <%= will_paginate @invoices,
+    class: 'pagination',
+    previous_label: 'Previous',
+    next_label: 'Next',
+    inner_window: '5',
+    outer_window: '1',
+    page_links: true,
+    params: {controller: 'patients', action: 'show'}
+    %>
+</div>
+
+    <div>
+    <%= link_to 'edit profile', edit_patient_path, method: :get, class: ' btn btn-edit' %>
+    </div>
+</div>

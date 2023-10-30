@@ -27,6 +27,9 @@
           <br/>
           <% if current_admin.present? %>
           <%= button_to "Logs", logs_path,  method: :get, class: 'btn-link' %>
+          <br/>
+          <%= button_to 'Patients', patients_path,  method: :get, class: 'btn-link' %> 
+          <br/>
           <%end%>
         </div>
 
