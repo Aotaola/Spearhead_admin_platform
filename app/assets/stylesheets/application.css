@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: lightseagreen;
+    background-color: cadetblue;
     height: 100%;
     width: 100%;
     padding-bottom: 3%
@@ -106,13 +106,18 @@
  .site-header:hover {
     letter-spacing: 5.4px;
     font-weight: 250;
-    color: mediumseagreen; 
+    color: lavender; 
     font: 'century-gothic';
-    background-color: aliceblue;
+    background-color: transparent;
     border-radius: 6rem;
     justify-content: center;
     text-decoration: underline;
-    transition-duration: .7s ;
+    
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: .4%;
+    padding-bottom: .4%;
+    transition-duration: 1s ;
     box-shadow: 
     20px 10px 30px aliceblue, 
     -20px -10px 30px aliceblue, 
@@ -672,58 +677,56 @@ table tbody th a:hover {
     background-color: firebrick;
     transition: background-color 0.6s ease-in-out
 }
-
-.search-bar {
+.search-area {
+    padding-left: 20%;
+    padding-right: 30%;
+    flex: 1;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: royalblue;
-    border-radius: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4rem;
+    background-color: steelblue;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-between; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content */
+    background-color: steelblue;
+    border-color: green; 
     padding: 7px;
 }
-.mobile-app-landing {
-    color: lightsteelblue;
-    font-weight: 300;
-}
 .search-bar input[type="search"] {
-    flex: 1;
-    padding: 1rem;
-    font-family: century;
+    flex: 1; 
+    width: 100%;
     padding: 10px 15px;
+    font-family: century;
     font-size: 16px;
     border: none;
     border-radius: 1rem;
     outline: none;
-    box-shadow: 0 2px 5px lavender (0, 0, 0, 0.1);
-}
-.search-bar-input{
-    width: 20rem ;
-    padding-left: 10px
-}
-.article_search {
-    display: flex;
-    flex-direction: row;
-    width: 20rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Fixed the box-shadow value */
 }
 
-/* Style for the search button */
 .search-bar input[type="submit"] {
     padding: 10px 20px;
     font-size: 16px;
-    width: 80%;
+    width: 100%;
     background-color: royalblue;
     color: aliceblue;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-left: 5px; /* Space between the search input and button */
 }
 
 .search-bar input[type="submit"]:hover {
     background-color: cornflowerblue;
 }
+
+/* Other styles remain unchanged */
+
 .search-bar-results {
     margin: 20px 0;
 }
