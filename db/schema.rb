@@ -37,6 +37,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_27_193443) do
   create_table "invoices", force: :cascade do |t|
     t.bigint "patient_id"
     t.string "description"
+    t.float "total_amount"
+    t.float "copayment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_invoices_on_patient_id"
@@ -58,9 +60,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_27_193443) do
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
     t.string "email"
+    t.string "phone_number"
     t.string "insurance"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
