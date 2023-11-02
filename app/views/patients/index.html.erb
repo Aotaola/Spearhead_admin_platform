@@ -3,8 +3,8 @@
     <div class = "search-area">
         <div class="search-bar">
             <%= search_form_for(@query) do |f| %>
-            <%= f.search_field :name_cont_any, placeholder: "Search...", class: 'search-bar-input'%>
-        </div>
+                <%= f.search_field :full_name_cont, placeholder: "Search...", class: 'search-bar-input' %>
+            </div>
         <div class="search-bar">
             <%= f.submit "Search!"%>
             <% end %>
@@ -14,9 +14,9 @@
         <div class="search-bar-results"> 
         <h4><%= pluralize(@pat.count, 'Result')%></h4> 
 
-          <% @pat.order(:name).each do |patient|%>
+          <% @pat.order(:full_name).each do |patient|%>
           <p>
-            <%= link_to patient.name, patient_path(patient) %>
+            <%= link_to patient.full_name, patient_path(patient) %>
           </p>
           <br/>
           <%end%>
@@ -35,7 +35,7 @@
         <% @patients_ordered.each do |patient| %>
             <tr>
                 <td>
-                    <%= link_to patient.name.truncate(100), patient_path(patient) %>
+                    <%= link_to patient.full_name.truncate(100), patient_path(patient) %>
                 </td>
                 <td>
                     <%= patient.email.truncate(100) %>
