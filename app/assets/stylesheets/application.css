@@ -678,8 +678,8 @@ table tbody th a:hover {
     transition: background-color 0.6s ease-in-out
 }
 .search-area {
-    padding-left: 5%;
-    padding-right: 40%;
+    padding-left: 20%;
+    padding-right: 20%;
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -690,8 +690,8 @@ table tbody th a:hover {
 .search-bar {
     flex: 1;
     display: flex; /* Enables flexbox layout */
-    justify-content: flex-start; /* Horizontally centers the content */
-    align-items: flex-start; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content */
     background-color: steelblue;
     width: 100%;
     border-color: green; 
@@ -700,7 +700,8 @@ table tbody th a:hover {
 .search-bar input[type="search"] {
     flex: 1; 
     display: flex;
-    width: 20rem;
+    height: auto;
+    width: 100%;
     padding: 10px 15px;
     font-family: century;
     font-size: 16px;

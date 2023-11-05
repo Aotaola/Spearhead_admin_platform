@@ -12,17 +12,20 @@ class Patient < ApplicationRecord
     before_save :downcase_email
 
     ransacker :full_name do |parent|
-        Arel::Nodes::NamedFunction.new('CONCAT_WS',
-          [Arel::Nodes.build_quoted(' '), parent.table[:first_name], parent.table[:last_name]])
+        Arel::Nodes::InfixOperation.new('||',
+          parent.table[:first_name], parent.table[:last_name])
       end
-      
+
     def self.ransackable_attributes(auth_object = nil)
-        ["first_name", "last_name"]
+        ["full_name", "email", "insurance", "phone_number"]
     end
   
     def self.ransackable_associations(auth_object = nil)
         ["invoices"]
     end
+    def name
+        "#{first_name} #{last_name}"
+      end
 
 
     private
