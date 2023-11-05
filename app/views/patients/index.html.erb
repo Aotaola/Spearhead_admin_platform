@@ -3,12 +3,9 @@
     <div class = "search-area">
         <div class="search-bar">
             <%= search_form_for(@query) do |f| %>
-            <%= f.search_field :full_name_or_insurance_or_phone_number_or_email_cont, placeholder: "hit enter to search", class: 'search-bar-input' %>
+            <%= f.search_field :full_name_or_insurance_or_phone_number_or_email_cont, placeholder: "Hit enter to search...", class: 'search-bar-input' %>
         </div>
-        <%# <div class="search-bar"> %>
-            <%# <%= f.submit "Search!"  %>
-            <% end %>
-        <%# </div> %>
+        <% end %>
     </div>
       <% if @pat.present? %>
         <div class="search-bar-results"> 

@@ -2,12 +2,10 @@
     <div class="search-area">
         <div class="search-bar">
             <%= search_form_for(@query) do |f| %>
-            <%= f.search_field :title_cont_any, placeholder: "Search...", class: 'search-bar-input'%>
+            <%= f.search_field :title_cont_any, placeholder: "Hit enter to search...", class: 'search-bar-input'%>
         </div>
-        <div class="search-bar">
-            <%= f.submit "Search!"%>
-            <% end %>
-        </div>
+        <% end %>
+        
     </div>
       <% if @art.present? %>
         <div class="search-bar-results"> 

@@ -694,14 +694,13 @@ table tbody th a:hover {
     align-items: center; /* Vertically centers the content */
     background-color: steelblue;
     width: 100%;
-    border-color: green; 
     padding: 7px;
 }
 .search-bar input[type="search"] {
     flex: 1; 
     display: flex;
     height: auto;
-    width: 100%;
+    width: 30rem;
     padding: 10px 15px;
     font-family: century;
     font-size: 16px;
@@ -710,20 +709,6 @@ table tbody th a:hover {
     outline: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Fixed the box-shadow value */
 }
-
-.search-bar input[type="submit"] {
-    padding: 10px 20px;
-    font-size: 16px;
-    width: 35%;
-    background-color: royalblue;
-    color: aliceblue;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-left: 5px; /* Space between the search input and button */
-}
-
 .search-bar input[type="submit"]:hover {
     background-color: cornflowerblue;
 }
