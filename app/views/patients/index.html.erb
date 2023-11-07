@@ -1,5 +1,4 @@
 <div>
-<%# <% render 'shared/error_messages', object: @patients %> 
     <div class = "search-area">
         <div class="search-bar">
             <%= search_form_for(@query) do |f| %>
@@ -17,7 +16,7 @@
             <%= link_to patient.name, patient_path(patient) %>
           </p>
           <br/>
-          <%end%>
+        <%end%>
         </div>
       <%end%>
     

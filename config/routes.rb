@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
- 
 
-  
+  get 'patient_login', to: 'patient_sessions#new'
+  post 'patient_login', to: 'patient_sessions#create'
+  delete 'patient_logout', to: 'patient_sessions#destroy'
+ 
 end
