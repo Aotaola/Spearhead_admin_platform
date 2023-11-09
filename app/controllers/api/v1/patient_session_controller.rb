@@ -4,7 +4,8 @@ module Api
   module V1
     
     class PatientSessionController < ApplicationController
-      protect_from_forgery with: :null_session
+      
+      skip_before_action :verify_authenticity_token
 
       def new
         # Renders the login form for patients
@@ -14,7 +15,7 @@ module Api
         patient = Patient.find_by(email: params[:email].downcase)
         if patient && patient.authenticate(params[:password])
           session[:patient_id] = patient.id
-           render json: { notice: 'Login successful', patient_id: patient.id }
+          render json: { notice: 'Login successful', patient_id: patient.id }
         else
           render json: { alert: 'Invalid email/password combination' }, status: :unauthorized
         end
@@ -22,9 +23,10 @@ module Api
       
       def destroy
         reset_session
-        flash[:notice] = "You have been logged out"
-        redirect_to :new # Or the patient's login path
+        render json: { notice: 'You have been logged out' }, status: :ok
       end
+      
+      
     end
 
   end
