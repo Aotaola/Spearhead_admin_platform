@@ -15,7 +15,7 @@ module Api
         patient = Patient.find_by(email: params[:email].downcase)
         if patient && patient.authenticate(params[:password])
           session[:patient_id] = patient.id
-          render json: { notice: 'Login successful', patient_id: patient.id }
+          render json: { notice: 'Login successful', patient_id: patient.id, patient: patient, invoices: patient.invoices}
         else
           render json: { alert: 'Invalid email/password combination' }, status: :unauthorized
         end
