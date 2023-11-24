@@ -1,8 +1,7 @@
 <div class="profile-container">
     <div class = "profile-items">
         <h2  class='profile-name'><%= @patient.name%></h2>
-
-        
+        <%=link_to "Lab Results+", new_invoice_path(patient_id: @patient.id), method: :get, class: 'button btn-link'%>
     </div>
 <table >
     <thead>

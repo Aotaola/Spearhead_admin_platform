@@ -1,5 +1,5 @@
 class InvoicesController < ApplicationController
-    before_action @set_invoice, only [:show, :update, :destroy, :edit]
+    before_action @set_invoice, only: [:show, :update, :destroy, :edit]
 
     def index
         @query = Invoice.ransack(params[:q])
@@ -19,10 +19,11 @@ class InvoicesController < ApplicationController
     end
     def new
         @invoice = Invoice.new
+        @patient = Patient.find(params[:patient_id])
     end
     def create
         @invoice = Invoice.new(invoice_params)
-        @invoice.patient_id = @patient.id
+        @patient = Patient.find(params[:patient_id])
         if @invoice.save
             redirect_to @patient, notice: "invoice was successfully created"
          else

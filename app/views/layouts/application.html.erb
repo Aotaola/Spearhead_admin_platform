@@ -16,7 +16,6 @@
     <h1><%= link_to "Spear Health", root_path, class:'site-header' %> </h1> 
       <div class='navBar'>
         <div class='actual-button-container'>
-          <%# link to archives (articles, patientprofiles, servivces, logs) %>
            <% if !current_admin.present? %>
           <%= button_to "Sign in", login_path,  method: :get, class: 'btn-link' %>
           <% end %>
@@ -42,6 +41,7 @@
           <br/>
           <br/>
           <%=button_to "Service+", new_service_path, method: :get, class: 'button btn-link'%>
+          <br/>
           <br/>
           <%= button_to 'Logout', logout_path, method: :delete, data: { turbo: "false", confirm: 'Are you sure you want to sign off?' }, class: 'btn btn-destroy'%>
           <% end %>

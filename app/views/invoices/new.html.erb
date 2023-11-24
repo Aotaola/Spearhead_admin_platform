@@ -1,0 +1,21 @@
+<div class='new-article-container'>
+    <h3>New Lab Result for 
+    <%= @patient.name %>
+    </h3>
+    <%# <%= render 'shared/error_messages', object: @invoice %> 
+    <%= form_with model: @invoice, data: { turbo: "false"} do |f|%>
+
+        <div>
+            <%= f.text_field :description, placeholder: 'Description'%>
+        </div>
+        <div>
+            <%= f.hidden_field :patient_id, value: @patient.id %>
+            
+        </div>
+        <div class="file-and-update">
+            <div class="update-button">
+            <%= f.submit "submit", method: :post %>
+            </div>
+        </div>
+    <% end %>
+</div>

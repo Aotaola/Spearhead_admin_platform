@@ -8,7 +8,6 @@ class PatientsController < ApplicationController
     end
     def show
         @invoices = @patient.invoices.paginate(page: params[:page], per_page: 6)
-
     end
     def edit
         
