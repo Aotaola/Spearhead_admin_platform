@@ -14,7 +14,7 @@ module Api
       
             # GET /patients/:id
             def show
-              render json: { patient: @patient, invoices: @patient.invoices }
+              render json: { patient: @patient, invoices: @patient.invoices.order(created_at: :asc) }
             end
       
             # POST /patients

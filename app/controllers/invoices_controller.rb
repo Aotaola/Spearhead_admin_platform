@@ -4,7 +4,7 @@ class InvoicesController < ApplicationController
     def index
         @query = Invoice.ransack(params[:q])
         @art = params[:q].blank? ? Invoice.none : @query.result(distinct: true)
-        @invoices = Invoice.paginate(page: params[:page], per_page: 10)
+        @invoices = Invoice.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     end
     def show
         
@@ -23,9 +23,9 @@ class InvoicesController < ApplicationController
     end
     def create
         @invoice = Invoice.new(invoice_params)
-        @patient = Patient.find(params[:patient_id])
+        @pat = @invoice.patient_id
         if @invoice.save
-            redirect_to @patient, notice: "invoice was successfully created"
+            redirect_to patient_path(@pat), notice: "invoice was successfully created"
          else
             render :new
             flash[:alert] = "there was an error creating the invoice"

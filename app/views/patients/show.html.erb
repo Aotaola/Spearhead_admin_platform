@@ -1,12 +1,14 @@
 <div class="profile-container">
     <div class = "profile-items">
         <h2  class='profile-name'><%= @patient.name%></h2>
-        <%=link_to "Lab Results+", new_invoice_path(patient_id: @patient.id), method: :get, class: 'button btn-link'%>
+        <%=link_to "Lab Results+", new_invoice_path(patient_id: @patient.id), method: :get, class: 'button btn-link lab-button'%>
     </div>
 <table >
     <thead>
         <tr>
-            <th>Invoice Description</th>
+            <th>past lab results</th>
+            <th>created at</th>
+            <th>updated at</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +18,12 @@
                 <td>
                     <%= link_to invoice.description.truncate(100, invoice_path(invoice)) %>
                 </td>
+                <td>
+                    <%= invoice.created_at%>
+                </td>
+                <td>
+                    <%= invoice.updated_at%>   
+                 </td>
             </tr>
         <% end %>
         <% invoices_on_current_page = @invoices_ordered.size %>
@@ -24,7 +32,10 @@
             <% (total_rows_required - invoices_on_current_page).times do %>
                 <tr>
                     <td>. </td>
+                    <td>. </td>
+                    <td>. </td>
                 </tr>
+                
             <% end %>
         <% end %>
     </tbody>
