@@ -1,9 +1,9 @@
 
 
-# AFC Mobile Admin Application README
+# Spearhead Admin Platform Application README
 
 ## Overview
-The AFC Mobile Admin application provides administrative support for the American Family Care client-side application. Built using CSS, HTML, and Ruby on Rails, this application boasts several essential features that aid in efficient and secure management.
+The Spearhead Admin Platform provides administrative support for the American Family Care client-side application. Built using CSS, HTML, and Ruby on Rails, this application boasts several essential features that aid in efficient and secure management.
 
 ## Features
 - User sessions and authentication
@@ -15,7 +15,7 @@ The AFC Mobile Admin application provides administrative support for the America
 - Robust database built with PostgreSQL
 - Model relationships, including complex one-to-many and many-to-many associations
 
-The American Family Care administrative staff can seamlessly create, edit, and delete critical information pertaining to their clientele. Additionally, the application maintains an active log of all transactions executed within its framework.
+The Spearhead staff can seamlessly create, edit, and delete critical information pertaining to their clientele. Additionally, the application maintains an active log of all transactions executed within its framework.
 
 ## Getting Started
 
